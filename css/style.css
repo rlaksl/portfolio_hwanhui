@@ -1,0 +1,30 @@
+/* ===================================intro 시작 */
+#introWrap {height: 100vh; padding: 0 111px; background-color: #A4A69B;}
+#introWrap header {color: #26290E; font-size: 1.50rem; position: relative; top: 53px; display: flex; justify-content: space-between; align-items: center;}
+#introWrap header p {font-family: "Red Hat Mono", monospace;}
+#introWrap header nav { position: absolute; width: max-content; left: 50%; transform: translateX(-50%);}
+#introWrap header nav .gnb {display: flex;}
+#introWrap header nav .gnb li {margin-left: 40px;}
+#introWrap header nav .gnb li:nth-child(1) {margin: 0;}
+#introWrap header nav .gnb li a {font-family: "Red Hat Mono", monospace;}
+#introWrap h1 {font-family: "Gupter", serif; position: absolute; bottom: 380px; color: #D0FFCD; font-size: 12.50rem;}
+#introWrap .introName {position: absolute; bottom: 350px; display: flex;}
+#introWrap .introName img {}
+#introWrap .introName p {font-family: "Gupter", serif; color: #D0FFCD; font-size: 2rem; margin-left: 10px;}
+#introWrap .borderLeft {border: 1px solid #D0FFCD; height: 100vh; position: absolute; left: 75px; top: 0;}
+#introWrap .borderBottom {border: 1px solid #D0FFCD; width: 100%; position: absolute; bottom: 75px; left: 0;}
+/* ===================================ProfileWrap 시작 */
+#profileWrap {height: 100vh; padding: 0 111px; background-color: #F7FFF7; color: #6C6A5D;}
+#profileWrap > p {font-size: 2.00rem; position: absolute; top: 111px;}
+#profileWrap .profile {display: flex; margin-top: 194px;}
+#profileWrap .pro_left {}
+#profileWrap .pro_left img { margin-bottom: 60px; }
+#profileWrap .pro_left .name {margin-bottom: 16px; font-size: 1.25rem; font-weight: 600; color: #6C6A5D;}
+#profileWrap .pro_left dl {display: flex; margin-bottom: 10px;font-size: 1.06rem; }
+#profileWrap .pro_left dl dt {font-weight: 600;}
+#profileWrap .pro_left dl dd {font-weight: 500;}
+#profileWrap .pro_left dl dt {margin-right: 26px;}
+#profileWrap .pro_left .Birth dt {margin-right: 37px;}
+#profileWrap .pro_left .sns dt {margin-right: 44px;}
+#profileWrap .pro_right {padding-left: 318px;}
+#profileWrap .borderCenter {border: 1px solid #D0FFCD; height: 636px; position: absolute; left: 816px; top: 194px;}
