@@ -8,19 +8,20 @@
   <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
+  <nav>
+    <ul>
+      <li class="on"></li>
+      <li><a href="#profileWrap">Profile</a></li> <!-- # 뒤에 넘기고 싶은 페이지 아이디 넣으면 됨 -->
+      <li><a href="#hdexWrap">Web desigen</a></li>
+      <li>Sns</li>
+      <li>Banner</li>
+      <li>Detail page</li>
+    </ul>
+  </nav>
   <div id="introWrap">
     <header>
       <p>2024 Portfolio</p>
       <p>UI/UX Designer</p>
-      <nav>
-        <ul class="gnb">
-          <li><a href="#">Profile</a></li>
-          <li><a href="#">Web desigen</a></li>
-          <li><a href="#">Sns</a></li>
-          <li><a href="#">Banner</a></li>
-          <li><a href="#">Detail page</a></li>
-        </ul>
-      </nav>
     </header>
     <h1>Portfolio</h1>
     <div class="introName">
@@ -54,42 +55,138 @@
       </dl>
       </div><!-- pro_left -->
       <div class="pro_right">
-      <dl class="exper">
-        <dt>experience</dt>
-        <dd><span>2002.09 -</span>방송통신대학교 법학과 (휴학)</dd>
-        <dd><span>2024.05 - 2024.10</span>UI/UX 반응형 웹디자인&웹퍼블리셔 양성과정 수료 예정</dd>
-        <dd><span>2022.06 - 2024.04</span>교육법인 쿰101 (정규직)</dd>
-        <dd><span>2022.01 - 2022.07</span>무인양품 (파트타이머)</dd>      
-        <dd><span>2018.01 - 2021.07</span>무인양품 (정규직)</dd>      
-        <dd><span>2009.03 - 2012.12</span>부평디자인과학고등학교 (졸업)</dd>      
-      </dl>
-      <dl class="1icense">
-        <dt>License</dt>
-        <dd><span>2024.09</span>웹 디자인 기능 필기 준비중</dd>
-        <dd><span>2011.07</span>전산응용기계제도기능사</dd>    
-      </dl>
-      <ul class="tool">
-        <li><img src="./img/Ps.png" alt="포토샵"></li>
-        <li><img src="./img/Ai.png" alt="일러스트"></li>
-        <li><img src="./img/Figma.png" alt="피그마"></li>
-        <li><img src="./img/html_js_css.png" alt="html, js, css"></li>
-      </ul>
+        <dl class="exper">
+          <dt>experience</dt>
+          <dd><span>2022.09 -</span>방송통신대학교 법학과 (휴학)</dd>
+          <dd><span>2024.05 - 2024.10</span>UI/UX 반응형 웹디자인&웹퍼블리셔 양성과정 수료 예정</dd>
+          <dd><span>2022.06 - 2024.04</span>교육법인 쿰101 (정규직)</dd>
+          <dd><span>2022.01 - 2022.07</span>무인양품 (파트타이머)</dd>      
+          <dd><span>2018.01 - 2021.07</span>무인양품 (정규직)</dd>      
+          <dd><span>2009.03 - 2012.12</span>부평디자인과학고등학교 (졸업)</dd>      
+        </dl>
+        <dl class="1icense">
+          <dt>License</dt>
+          <dd><span>2024.09</span>웹 디자인 기능 필기 준비중</dd>
+          <dd><span>2011.07</span>전산응용기계제도기능사</dd>    
+        </dl>
+        <ul class="tool">
+          <li><img src="./img/Ps.png" alt="포토샵"></li>
+          <li><img src="./img/Ai.png" alt="일러스트"></li>
+          <li><img src="./img/Figma.png" alt="피그마"></li>
+          <li><img src="./img/html_js_css.png" alt="html, js, css"></li>
+        </ul>
       </div><!-- pro_right -->
     </div>
     <div class="borderCenter"></div>
   </div><!-- ProfileWrap -->
   <div id="hdexWrap">
-    <p>Web Design</p>
-    <h2>HDEX</h2>
-    <h3>concept on<br>desktop</h3>
+    <div class="hdexLeft">
+      <h1>Web Design</h1>
+      <h2>HDEX</h2>
+      <h3>concept on<br>desktop</h3>
+      <div class="infor">
+        <dl>
+          <dt>제작 기간: </dt>
+          <dd>24.08.07 - 13 (5일, 40시간)</dd>
+        </dl>
+        <dl>
+          <dt>제작 페이지: </dt>
+          <dd>index</dd>
+        </dl>
+        <dl>
+          <dt>제작 기간: </dt>
+          <dd><img src="./img/Figma.png" alt="피그마"></dd>
+          <dd><img src="./img/Ps.png" alt="포토샵"></dd>
+          <dd><img src="./img/Ai.png" alt="일러스트"></dd>
+        </dl>
+      </div>
+      <div class="button">
+        <a href="#">기획서</a>
+        <a href="#">와이어프레임</a>
+        <a href="#">결과보기</a>
+      </div>
+    </div>
+    <a href="#" class="hdexRight"><img src="./img/HDEX.png" alt="hdex"></a>
   </div><!-- hdexWrap -->
   <div id="mMallWrap">
-    <h2>M-Mall</h2>
-    <h3>concept on<br>desktop</h3>
+    <div class="mMallLeft">
+      <h2>M-Mall</h2>
+      <h3>concept on<br>desktop</h3>
+      <div class="infor">
+        <dl>
+          <dt>제작 기간: </dt>
+          <dd>24.08.21 - 28 (8일, 64시간)</dd>
+        </dl>
+        <dl>
+          <dt>제작 페이지: </dt>
+          <dd>index, 컬처페이지, 상품 상세페이지</dd>
+        </dl>
+        <dl>
+          <dt>제작 기간: </dt>
+          <dd><img src="./img/Figma.png" alt="피그마"></dd>
+          <dd><img src="./img/Ps.png" alt="포토샵"></dd>
+          <dd><img src="./img/html_js_css.png" alt="html, js, css"></dd>
+        </dl>
+      </div>
+      <div class="button">
+        <a href="#">기획서</a>
+        <a href="#">와이어프레임</a>
+        <a href="#">결과보기</a>
+      </div>
+    </div>
+    <a href="https://rlaksl.github.io/M-MALL_project/" class="mMallRight"><img src="./img/mMall.png" alt="M-Mall"></a>
   </div><!-- M-MALLWrap -->
   <div id="madecaWrap">
-    <h2>MADECA PRIME</h2>
-    <h3>concept on<br>desktop</h3>
+    <div class="madecaLeft">
+      <h2>M-Mall</h2>
+      <h3>concept on<br>desktop</h3>
+      <div class="infor">
+        <dl>
+          <dt>제작 기간: </dt>
+          <dd>24.08.30 - 09.03 (3일, 24시간)</dd>
+        </dl>
+        <dl>
+          <dt>제작 페이지: </dt>
+          <dd>index, 컬처페이지, 상품 상세페이지</dd>
+        </dl>
+        <dl>
+          <dt>제작 기간: </dt>
+          <dd><img src="./img/Figma.png" alt="피그마"></dd>
+          <dd><img src="./img/Ps.png" alt="포토샵"></dd>
+          <dd><img src="./img/html_js_css.png" alt="html, js, css"></dd>
+        </dl>
+      </div>
+      <div class="button">
+        <a href="#">기획서</a>
+        <a href="#">와이어프레임</a>
+        <a href="#">결과보기</a>
+      </div>
+    </div>
+    <a href="" class="madecaRight"><img src="./img/madecaPrime.png" alt="마데카 프라임"></a>
   </div><!-- madecaWrap -->
+  <script src="js/jquery-3.7.1.min.js"></script>
+  <script>
+    let winHeight = $(window).height();
+
+    $(window).on('resize', function(){
+      winHeight = $(window).height();
+    });
+
+    /* $('ul li').on('click', function(){
+      let i = $(this).index();
+      $('html, body').animate({
+        scrollTop : winHeight * i});
+    }); */
+
+    $(window).on('scroll', function(){
+      let scr = $(window).scrollTop();
+      for(let i = 0; i<$('ul li').length; i++){
+        if(scr >= winHeight*i && scr < winHeight *(i+1)){
+        $('ul li').removeClass('on');
+        $('ul li').eq(i).addClass('on');};
+        }
+
+      });
+  </script>
 </body>
 </html> 
