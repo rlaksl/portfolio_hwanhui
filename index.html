@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>디블리셔 김</title>
+  <title>Portfolio_김환희</title>
   <link rel="stylesheet" href="./css/base.css">
   <link rel="stylesheet" href="./css/style.css">
 </head>
@@ -57,7 +57,7 @@
       <div class="pro_right">
         <dl class="exper">
           <dt>experience</dt>
-          <dd><span>2022.09 -</span>방송통신대학교 법학과 (휴학)</dd>
+          <dd><span class="experUni">2022.09 - </span>방송통신대학교 법학과 (휴학)</dd>
           <dd><span>2024.05 - 2024.10</span>UI/UX 반응형 웹디자인&웹퍼블리셔 양성과정 수료 예정</dd>
           <dd><span>2022.06 - 2024.04</span>교육법인 쿰101 (정규직)</dd>
           <dd><span>2022.01 - 2022.07</span>무인양품 (파트타이머)</dd>      
@@ -66,8 +66,8 @@
         </dl>
         <dl class="1icense">
           <dt>License</dt>
-          <dd><span>2024.09</span>웹 디자인 기능 필기 준비중</dd>
-          <dd><span>2011.07</span>전산응용기계제도기능사</dd>    
+          <dd><span>2024.09 </span>웹 디자인 기능 필기 준비중</dd>
+          <dd><span>2011.07 </span>전산응용기계제도기능사</dd>    
         </dl>
         <div class="tool">
           <p>Tool</p>
@@ -105,8 +105,8 @@
       </div>
       <div class="button">
         <a href="#">기획서</a>
-        <a href="#">와이어프레임</a>
-        <a href="#">결과보기</a>
+        <a href="https://www.figma.com/proto/s23xnVymbk6RuhwSxn3K5R/HDEX?page-id=0%3A1&node-id=21-15&node-type=frame&viewport=413%2C289%2C0.07&t=08NPYBZAdXVVKnAY-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=21%3A15">와이어프레임</a>
+        <a href="https://www.figma.com/proto/s23xnVymbk6RuhwSxn3K5R/HDEX?node-id=130-89&node-type=frame&t=2ldRl58wygFvSMS9-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=21%3A110">결과보기</a>
       </div>
     </div>
     <a href="#" class="hdexRight"><img src="./img/HDEX.png" alt="hdex"></a>
@@ -133,7 +133,7 @@
       </div>
       <div class="button">
         <a href="#">기획서</a>
-        <a href="#">와이어프레임</a>
+        <a href="https://www.figma.com/proto/J8MEetycnmffPsvOeYrTUD/M%ED%8F%AC%EC%9D%B8%ED%8A%B8-%EB%AA%B0?node-id=97-178&node-type=frame&t=pt2KUEanMJXlj59n-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A49">와이어프레임</a>
         <a href="https://rlaksl.github.io/M-MALL_project/">결과보기</a>
       </div>
     </div>
@@ -161,27 +161,19 @@
       </div>
       <div class="button">
         <a href="#">기획서</a>
-        <a href="#">와이어프레임</a>
-        <a href="#">결과보기</a>
+        <a href="https://www.figma.com/proto/NGLuNNG5fznjYer3P0tVl0/%EB%A7%88%EB%8D%B0%EC%B9%B4%ED%94%84%EB%9D%BC%EC%9E%84?node-id=159-2&node-type=frame&t=B0xiS8doV3PlvqQu-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1">와이어프레임</a>
+        <a href="https://www.figma.com/proto/NGLuNNG5fznjYer3P0tVl0/%EB%A7%88%EB%8D%B0%EC%B9%B4%ED%94%84%EB%9D%BC%EC%9E%84?node-id=2-30&node-type=frame&t=ZzUqrReXM3IeVEBI-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1">결과보기</a>
       </div>
     </div>
     <a href="" class="madecaRight"><img src="./img/madecaPrime.png" alt="마데카 프라임"></a>
   </div><!-- madecaWrap -->
   <script src="js/jquery-3.7.1.min.js"></script>
   <script>
-    let winHeight = $(window).height();
-
-    $(window).on('resize', function(){
-      winHeight = $(window).height();
+    $('ul li').on('click', function(){
+      $(this).addClass('on').siblings().removeClass('on');
     });
 
-    /* $('ul li').on('click', function(){
-      let i = $(this).index();
-      $('html, body').animate({
-        scrollTop : winHeight * i});
-    }); */
-
-    /* $(window).on('scroll', function(){
+    /* $(window).on('scroll', function(){l
       let scr = $(window).scrollTop();
       for(let i = 0; i<$('ul li').length; i++){
         if(scr >= winHeight*i && scr < winHeight *(i+1)){

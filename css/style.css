@@ -4,7 +4,7 @@ nav {position: fixed; top: 53px; left: 50%; transform: translateX(-50%);}
 nav ul {display: flex; justify-items: center;}
 nav ul li {margin-left: 40px; font-family: "Red Hat Mono", monospace; color: #26290E; font-size: 1.3rem; cursor: pointer; padding-bottom: 10px;}
 nav ul li:nth-child(1) {margin: 0;}
-ul li.on{text-decoration: underline; font-weight: 500;}
+ul li.on::after {content: '';display: inline-block; width: 100%; height: 1.4px; background: #6C6A5D; position: relative; top: -12px;}
 #introWrap {height: 100vh; padding: 0 111px; background-color: #A4A69B;}
 #introWrap header {color: #26290E; font-size: 1.50rem; position: relative; top: 53px; display: flex; justify-content: space-between; align-items: center;}
 #introWrap header p {font-family: "Red Hat Mono", monospace;}
@@ -18,21 +18,22 @@ ul li.on{text-decoration: underline; font-weight: 500;}
 #profileWrap {height: 100vh; padding: 0 111px; background-color: #F7FFF7; color: #6C6A5D;}
 #profileWrap > p {font-size: 2.00rem; padding-top: 111px;}
 #profileWrap .profile {display: flex; margin-top: 60px;}
-#profileWrap .pro_left {border-right: 1px solid #D0FFCD;}
+#profileWrap .pro_left {border-right: 1px solid #6C6A5D;}
 #profileWrap .pro_left img { margin-bottom: 60px; margin-right: 158px;}
-#profileWrap .pro_left .name {margin-bottom: 16px; font-size: 1.25rem; font-weight: 600; color: #6C6A5D;}
+#profileWrap .pro_left .name {margin-bottom: 26px; font-size: 1.25rem; font-weight: 600; color: #6C6A5D;}
 #profileWrap .pro_left dl {display: flex; margin-bottom: 10px; font-size: 1.06rem; }
-#profileWrap .pro_left dl dt {font-weight: 600;}
-#profileWrap .pro_left dl dd {font-weight: 500;}
-#profileWrap .pro_left dl dt {margin-right: 26px;}
+#profileWrap .pro_left dl dt {font-weight: 600; margin-right: 26px;}
+#profileWrap .pro_left dl dd {font-weight: 500; margin-bottom: 8px;}
 #profileWrap .pro_left .Birth dt {margin-right: 37px;}
 #profileWrap .pro_left .sns dt {margin-right: 44px;}
 #profileWrap .pro_right {margin-left: 158px;}
 #profileWrap .pro_right dl {margin-bottom: 85px; font-size: 1.06rem;}
-#profileWrap .pro_right dl dt {margin-bottom: 26px; font-size: 1.25rem; font-weight: 600;}
+#profileWrap .pro_right dl dt {margin-bottom: 26px; font-size: 1.25rem; font-weight: bold;}
 #profileWrap .pro_right dl dd {margin-bottom: 20px; font-size: 1.06rem;}
+#profileWrap .pro_right dl dd span {padding-right: 15px; font-weight: 600;}
+#profileWrap .pro_right dl .experUni {padding-right: 70px; }
 #profileWrap .pro_right .tool {}
-#profileWrap .pro_right .tool p {margin-bottom: 26px; font-size: 1.25rem; font-weight: 600;}
+#profileWrap .pro_right .tool p {margin-bottom: 26px; font-size: 1.25rem; font-weight: bold;}
 #profileWrap .pro_right .tool ul  {display: flex; align-items: center;}
 #profileWrap .pro_right .tool ul li {margin-right: 12px;}
 #profileWrap .pro_right .tool ul li img {}
