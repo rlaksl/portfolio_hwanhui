@@ -28,10 +28,14 @@ ul li.on{text-decoration: underline; font-weight: 500;}
 #profileWrap .pro_left .Birth dt {margin-right: 37px;}
 #profileWrap .pro_left .sns dt {margin-right: 44px;}
 #profileWrap .pro_right {margin-left: 158px;}
-#profileWrap .pro_right dl {margin-bottom: 10px; font-size: 1.06rem;}
-#profileWrap .pro_right dl dt {margin-bottom: 26px; font-size: 1.06rem;}
-#profileWrap .pro_right dl dd {margin-bottom: 10px; font-size: 1.06rem;}
-#profileWrap .pro_right .tool {display: flex; margin-right: 12px;}
+#profileWrap .pro_right dl {margin-bottom: 85px; font-size: 1.06rem;}
+#profileWrap .pro_right dl dt {margin-bottom: 26px; font-size: 1.25rem; font-weight: 600;}
+#profileWrap .pro_right dl dd {margin-bottom: 20px; font-size: 1.06rem;}
+#profileWrap .pro_right .tool {}
+#profileWrap .pro_right .tool p {margin-bottom: 26px; font-size: 1.25rem; font-weight: 600;}
+#profileWrap .pro_right .tool ul  {display: flex; align-items: center;}
+#profileWrap .pro_right .tool ul li {margin-right: 12px;}
+#profileWrap .pro_right .tool ul li img {}
 /* #profileWrap .borderCenter {border: 1px solid #D0FFCD; height: 636px; position: absolute; left: 816px; top: 194px;} */
 /* ===================================HDEX 시작 */
 #hdexWrap {display: flex;width: 100%; height: 100vh; background: #F7F7F7; padding: 0 111px; justify-content: space-between;}
