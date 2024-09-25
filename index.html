@@ -51,7 +51,7 @@
       </dl>
       <dl class="sns">
         <dt>SNS</dt>
-        <dd><a href="https://www.instagram.com/">@인스타</a></dd>
+        <dd><a href="https://www.instagram.com/hwanhui_i">@hwanhui_i</a></dd>
       </dl>
       </div><!-- pro_left -->
       <div class="pro_right">
@@ -62,7 +62,7 @@
           <dd><span>2022.06 - 2024.04</span>교육법인 쿰101 (정규직)</dd>
           <dd><span>2022.01 - 2022.07</span>무인양품 (파트타이머)</dd>      
           <dd><span>2018.01 - 2021.07</span>무인양품 (정규직)</dd>      
-          <dd><span>2009.03 - 2012.12</span>부평디자인과학고등학교 (졸업)</dd>      
+          <dd><span>2009.03 - 2012.02</span>부평디자인과학고등학교 (졸업)</dd>      
         </dl>
         <dl class="1icense">
           <dt>License</dt>
@@ -105,8 +105,8 @@
       </div>
       <div class="button">
         <a href="#">기획서</a>
-        <a href="https://www.figma.com/proto/s23xnVymbk6RuhwSxn3K5R/HDEX?page-id=0%3A1&node-id=21-15&node-type=frame&viewport=413%2C289%2C0.07&t=08NPYBZAdXVVKnAY-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=21%3A15">와이어프레임</a>
-        <a href="https://www.figma.com/proto/s23xnVymbk6RuhwSxn3K5R/HDEX?node-id=130-89&node-type=frame&t=2ldRl58wygFvSMS9-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=21%3A110">결과보기</a>
+        <a href="https://www.figma.com/proto/s23xnVymbk6RuhwSxn3K5R/HDEX?page-id=0%3A1&node-id=21-15&node-type=frame&viewport=413%2C289%2C0.07&t=08NPYBZAdXVVKnAY-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=21%3A15" target="_blank">와이어프레임</a>
+        <a href="https://www.figma.com/proto/s23xnVymbk6RuhwSxn3K5R/HDEX?node-id=130-89&node-type=frame&t=2ldRl58wygFvSMS9-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=21%3A110" target="_blank">결과보기</a>
       </div>
     </div>
     <a href="#" class="hdexRight"><img src="./img/HDEX.png" alt="hdex"></a>
@@ -132,12 +132,12 @@
         </dl>
       </div>
       <div class="button">
-        <a href="#">기획서</a>
+        <a href="https://www.figma.com/proto/UG7itBeM6mzU3uAY8uKA7W/%ED%8F%AC%ED%8F%B4-%EA%B8%B0%ED%9A%8D%EC%84%9C%26-%EB%B0%9C%ED%91%9C-%EB%8C%80%EB%B3%B8?page-id=0%3A1&node-id=1-44&node-type=frame&viewport=3354%2C323%2C0.32&t=zJTkE17Edqj4qxvZ-1&scaling=min-zoom&content-scaling=fixed" target="_blank">기획서</a>
         <a href="https://www.figma.com/proto/J8MEetycnmffPsvOeYrTUD/M%ED%8F%AC%EC%9D%B8%ED%8A%B8-%EB%AA%B0?node-id=97-178&node-type=frame&t=pt2KUEanMJXlj59n-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A49">와이어프레임</a>
-        <a href="https://rlaksl.github.io/M-MALL_project/">결과보기</a>
+        <a href="https://rlaksl.github.io/M-MALL_project/ " target="_blank">결과보기</a>
       </div>
     </div>
-    <a href="https://rlaksl.github.io/M-MALL_project/" class="mMallRight"><img src="./img/mMall.png" alt="M-Mall"></a>
+    <a href="https://rlaksl.github.io/M-MALL_project/" target="_blank" class="mMallRight"><img src="./img/mMall.png" alt="M-Mall"></a>
   </div><!-- M-MALLWrap -->
   <div id="madecaWrap">
     <div class="madecaLeft">
@@ -168,20 +168,25 @@
     <a href="" class="madecaRight"><img src="./img/madecaPrime.png" alt="마데카 프라임"></a>
   </div><!-- madecaWrap -->
   <script src="js/jquery-3.7.1.min.js"></script>
+  <script src="js/jquery.mousewheel.min.js"></script>
   <script>
     $('ul li').on('click', function(){
       $(this).addClass('on').siblings().removeClass('on');
     });
-
-    /* $(window).on('scroll', function(){l
-      let scr = $(window).scrollTop();
-      for(let i = 0; i<$('ul li').length; i++){
-        if(scr >= winHeight*i && scr < winHeight *(i+1)){
-        $('ul li').removeClass('on');
-        $('ul li').eq(i).addClass('on');};
-        }
-
-      }); */
+    let winHeight = $(window).height();
+    $('div').on('mousewheel', function(e,d){
+      if(d>0){ // 마우스 휠  올렸을 때
+        let prv = $(this).prev().offset().top;
+        $('html, body').stop().animate({
+          scrollTop : prv
+        })
+      }else if(d<0){ //마우스 휠 내렸을 때
+        let nxt = $(this).next().offset().top;
+        $('html, body').stop().animate({
+          scrollTop : nxt
+        })
+      }
+    });
   </script>
 </body>
 </html> 
