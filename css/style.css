@@ -53,7 +53,7 @@ ul li.on::after {content: '';display: inline-block; width: 100%; height: 1.4px; 
 #hdexWrap .hdexLeft .button a {display: inline-block; font-size: 0.88rem; color: #414141; width: 115px; line-height: 30px; text-align: center; border: 1px solid #868686; margin-right: 10px;}
 #hdexWrap .hdexRight {margin-top: 208px;}
 /* ===================================M-Mall 시작 */
-#mMallWrap {display: flex;width: 100%; height: 100vh; background: #FDFDE6; padding: 0 111px; justify-content: space-between;}
+#mMallWrap {display: flex;width: 100%; height: 100vh; background: #E6F1FB; padding: 0 111px; justify-content: space-between;}
 #mMallWrap .mMallLeft {padding-bottom: 113px; margin-top: 111px;}
 #mMallWrap .mMallLeft h2 {font-size: 5rem; font-weight: bold; letter-spacing: -3px;}
 #mMallWrap .mMallLeft h3 {font-size: 3.44rem; line-height: 50px; letter-spacing: -3px; margin: 30px 0 290px;}
@@ -66,7 +66,7 @@ ul li.on::after {content: '';display: inline-block; width: 100%; height: 1.4px; 
 #mMallWrap .mMallLeft .button a {display: inline-block; font-size: 0.88rem; color: #414141; width: 115px; line-height: 30px; text-align: center; border: 1px solid #868686; margin-right: 10px;}
 #mMallWrap .mMallRight {margin-top: 208px;}
 /* ===================================madecaPrime 시작 */
-#madecaWrap {display: flex;width: 100%; height: 100vh; background: #ECF1FA; padding: 0 111px; justify-content: space-between;}
+#madecaWrap {display: flex;width: 100%; height: 100vh; background: #F4ECF6; padding: 0 111px; justify-content: space-between;}
 #madecaWrap .madecaLeft {padding-bottom: 113px; margin-top: 111px;}
 #madecaWrap .madecaLeft h2 {font-size: 5rem; font-weight: bold; letter-spacing: -3px;}
 #madecaWrap .madecaLeft h3 {font-size: 3.44rem; line-height: 50px; letter-spacing: -3px; margin: 30px 0 290px;}
