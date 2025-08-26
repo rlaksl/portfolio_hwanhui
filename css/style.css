@@ -1,83 +1,265 @@
-/* ===================================intro 시작 */
-body, html {scroll-behavior: smooth;} /* 페이지 이동할 떄 부드럼게 넘기는 거 */
-nav {position: fixed; top: 53px; left: 50%; transform: translateX(-50%);}
-nav ul {display: flex; justify-items: center;}
-nav ul li {margin-left: 40px; font-family: "Red Hat Mono", monospace; color: #26290E; font-size: 1.3rem; cursor: pointer; padding-bottom: 10px;}
-nav ul li:nth-child(1) {margin: 0;}
-ul li.on::after {content: '';display: inline-block; width: 100%; height: 1.4px; background: #6C6A5D; position: relative; top: -12px;}
-#introWrap {height: 100vh; padding: 0 111px; background-color: #A4A69B;}
-#introWrap header {color: #26290E; font-size: 1.50rem; position: relative; top: 53px; display: flex; justify-content: space-between; align-items: center;}
-#introWrap header p {font-family: "Red Hat Mono", monospace;}
-#introWrap h1 {font-family: "Gupter", serif; position: absolute; bottom: 380px; color: #D0FFCD; font-size: 12.50rem;}
-#introWrap .introName {position: absolute; bottom: 350px; display: flex;}
-#introWrap .introName img {}
-#introWrap .introName p {font-family: "Gupter", serif; color: #D0FFCD; font-size: 2rem; margin-left: 10px;}
-#introWrap .borderLeft {border: 1px solid #D0FFCD; height: 100vh; position: absolute; left: 75px; top: 0;}
-#introWrap .borderBottom {border: 1px solid #D0FFCD; width: 100%; position: absolute; bottom: 75px; left: 0;}
+/* ===================================페이지 공통 스타일 */
+body, html {
+  scroll-behavior: smooth;
+}
+
+/* ===================================Navigation 시작 */
+nav {
+  position: fixed;
+  top: 53px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+}
+
+nav ul {
+  display: flex;
+  justify-items: center;
+}
+
+nav ul li {
+  margin-left: 40px;
+  font-family: "Red Hat Mono", monospace;
+  color: #26290E;
+  font-size: clamp(1rem, 1.5vw, 1.3rem);
+  cursor: pointer;
+  padding-bottom: 10px;
+}
+
+nav ul li:nth-child(1) {
+  margin: 0;
+}
+
+ul li.on::after {
+  content: '';
+  display: inline-block;
+  width: 100%;
+  height: 1.4px;
+  background: #6C6A5D;
+  position: relative;
+  top: -12px;
+}
+
 /* ===================================ProfileWrap 시작 */
-#profileWrap {height: 100vh; padding: 0 111px; background-color: #F7FFF7; color: #6C6A5D;}
-#profileWrap > p {font-size: 2.00rem; padding-top: 111px;}
-#profileWrap .profile {display: flex; margin-top: 60px;}
-#profileWrap .pro_left {border-right: 1px solid #6C6A5D;}
-#profileWrap .pro_left img { margin-bottom: 60px; margin-right: 158px;}
-#profileWrap .pro_left .name {margin-bottom: 26px; font-size: 1.25rem; font-weight: 600; color: #6C6A5D;}
-#profileWrap .pro_left dl {display: flex; margin-bottom: 10px; font-size: 1.06rem; }
-#profileWrap .pro_left dl dt {font-weight: 600; margin-right: 26px;}
-#profileWrap .pro_left dl dd {font-weight: 500; margin-bottom: 8px;}
-#profileWrap .pro_left .Birth dt {margin-right: 37px;}
-#profileWrap .pro_left .sns dt {margin-right: 44px;}
-#profileWrap .pro_right {margin-left: 158px;}
-#profileWrap .pro_right dl {margin-bottom: 85px; font-size: 1.06rem;}
-#profileWrap .pro_right dl dt {margin-bottom: 26px; font-size: 1.25rem; font-weight: bold;}
-#profileWrap .pro_right dl dd {margin-bottom: 20px; font-size: 1.06rem;}
-#profileWrap .pro_right dl dd span {padding-right: 15px; font-weight: 600;}
-#profileWrap .pro_right dl .experUni {padding-right: 70px; }
-#profileWrap .pro_right .tool {}
-#profileWrap .pro_right .tool p {margin-bottom: 26px; font-size: 1.25rem; font-weight: bold;}
-#profileWrap .pro_right .tool ul  {display: flex; align-items: center;}
-#profileWrap .pro_right .tool ul li {margin-right: 12px;}
-#profileWrap .pro_right .tool ul li img {}
-/* #profileWrap .borderCenter {border: 1px solid #D0FFCD; height: 636px; position: absolute; left: 816px; top: 194px;} */
-/* ===================================HDEX 시작 */
-#hdexWrap {display: flex;width: 100%; height: 100vh; background: #F7F7F7; padding: 0 111px; justify-content: space-between;}
-#hdexWrap .hdexLeft {padding-bottom: 113px; margin-top: 48px;}
-#hdexWrap .hdexLeft h1 {color: #26290E; font-size: 2rem; font-weight: 500; margin-bottom: 20px; display: fixed;}
-#hdexWrap .hdexLeft h2 {font-size: 5rem; font-weight: bold; letter-spacing: -3px;}
-#hdexWrap .hdexLeft h3 {font-size: 3.44rem; line-height: 50px; letter-spacing: -3px; margin: 30px 0 290px;}
-#hdexWrap .hdexLeft .infor {}
-#hdexWrap .hdexLeft .infor dl {display: flex; margin-bottom: 30px; vertical-align: middle;}
-#hdexWrap .hdexLeft .infor dl:last-child {align-items: center;}
-#hdexWrap .hdexLeft .infor dt {margin-right: 10px; font-size: 1.38rem; font-weight: bold;}
-#hdexWrap .hdexLeft .infor dd {font-size: 1.38rem; margin-right: 10px;}
-#hdexWrap .hdexLeft .button {display: flex;}
-#hdexWrap .hdexLeft .button li a {display: block; font-size: 0.88rem; color: #414141; width: 115px; line-height: 30px; text-align: center; border: 1px solid #868686; margin-right: 15px; transition: all 0.8s;}
-#hdexWrap .hdexLeft .button li:hover a {color: #f2f2f2; background-color: #414141;}
-#hdexWrap .hdexRight {margin-top: 208px;}
-/* ===================================M-Mall 시작 */
-#mMallWrap {display: flex;width: 100%; height: 100vh; background: #E6F1FB; padding: 0 111px; justify-content: space-between;}
-#mMallWrap .mMallLeft {padding-bottom: 113px; margin-top: 111px;}
-#mMallWrap .mMallLeft h2 {font-size: 5rem; font-weight: bold; letter-spacing: -3px;}
-#mMallWrap .mMallLeft h3 {font-size: 3.44rem; line-height: 50px; letter-spacing: -3px; margin: 30px 0 290px;}
-#mMallWrap .mMallLeft .infor {}
-#mMallWrap .mMallLeft .infor dl {display: flex; margin-bottom: 30px; vertical-align: middle;}
-#mMallWrap .mMallLeft .infor dl:last-child {align-items: center;}
-#mMallWrap .mMallLeft .infor dt {margin-right: 10px; font-size: 1.38rem; font-weight: bold;}
-#mMallWrap .mMallLeft .infor dd {font-size: 1.38rem; margin-right: 10px;}
-#mMallWrap .mMallLeft .button {display: flex;}
-#mMallWrap .mMallLeft .button li a {display: block; font-size: 0.88rem; color: #414141; width: 115px; line-height: 30px; text-align: center; border: 1px solid #868686; margin-right: 15px; transition: all 0.8s;}
-#mMallWrap .mMallLeft .button li:hover a {color: #f2f2f2; background-color: #414141;}
-#mMallWrap .mMallRight {margin-top: 208px;}
-/* ===================================madecaPrime 시작 */
-#madecaWrap {display: flex;width: 100%; height: 100vh; background: #F4ECF6; padding: 0 111px; justify-content: space-between;}
-#madecaWrap .madecaLeft {padding-bottom: 113px; margin-top: 111px;}
-#madecaWrap .madecaLeft h2 {font-size: 5rem; font-weight: bold; letter-spacing: -3px;}
-#madecaWrap .madecaLeft h3 {font-size: 3.44rem; line-height: 50px; letter-spacing: -3px; margin: 30px 0 290px;}
-#madecaWrap .madecaLeft .infor {}
-#madecaWrap .madecaLeft .infor dl {display: flex; margin-bottom: 30px; vertical-align: middle;}
-#madecaWrap .madecaLeft .infor dl:last-child {align-items: center;}
-#madecaWrap .madecaLeft .infor dt {margin-right: 10px; font-size: 1.38rem; font-weight: bold;}
-#madecaWrap .madecaLeft .infor dd {font-size: 1.38rem; margin-right: 10px;}
-#madecaWrap .madecaLeft .button {display: flex;}
-#madecaWrap .madecaLeft .button li a {display: inline-block; font-size: 0.88rem; color: #414141; width: 115px; line-height: 30px; text-align: center; border: 1px solid #868686; margin-right: 15px; transition: all 0.8s;}
-#madecaWrap .madecaLeft .button li:hover a {color: #f2f2f2; background-color: #414141;}
-#madecaWrap .madecaRight {margin-top: 208px;}
+#profileWrap {
+  height: 100vh;
+  padding: 0 clamp(30px, 8vw, 111px);
+  background-color: #F7FFF7;
+  color: #6C6A5D;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+#profileWrap > p {
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  padding-top: 111px;
+  margin-bottom: 60px;
+}
+
+#profileWrap .profile {
+  display: flex;
+  flex: 1;
+  align-items: center;
+}
+
+#profileWrap .pro_left {
+  border-right: 1px solid #6C6A5D;
+}
+
+#profileWrap .pro_left img {
+  margin-bottom: 60px;
+  margin-right: clamp(50px, 12vw, 158px);
+  width: clamp(150px, 20vw, 100%);
+  height: auto;
+}
+
+#profileWrap .pro_left .name {
+  margin-bottom: 26px;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #6C6A5D;
+}
+
+#profileWrap .pro_left dl {
+  display: flex;
+  margin-bottom: 10px;
+  font-size: 1.06rem;
+}
+
+#profileWrap .pro_left dl dt {
+  font-weight: 600;
+  margin-right: 26px;
+}
+
+#profileWrap .pro_left dl dd {
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+#profileWrap .pro_left .Birth dt {
+  margin-right: 37px;
+}
+
+#profileWrap .pro_left .sns dt {
+  margin-right: 44px;
+}
+
+#profileWrap .pro_right {
+  margin-left: clamp(50px, 12vw, 158px);
+  flex: 1;
+}
+
+#profileWrap .pro_right dl {
+  margin-bottom: 50px;
+  font-size: 1.06rem;
+}
+
+#profileWrap .pro_right dl dt {
+  margin-bottom: 26px;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+#profileWrap .pro_right dl dd {
+  margin-bottom: 20px;
+  font-size: 1.06rem;
+}
+
+#profileWrap .pro_right dl dd span {
+  padding-right: 15px;
+  font-weight: 600;
+}
+
+#profileWrap .pro_right dl .experUni {
+  padding-right: 70px;
+}
+
+#profileWrap .pro_right .tool p {
+  margin-bottom: 26px;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+#profileWrap .pro_right .tool ul {
+  display: flex;
+  align-items: center;
+}
+
+#profileWrap .pro_right .tool ul li {
+  margin-right: 12px;
+}
+
+/* ===================================프로젝트 공통 스타일 */
+#javaNyangWrap,
+#hdexWrap,
+#mMallWrap,
+#madecaWrap {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  padding: 0 clamp(30px, 8vw, 111px);
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+/* 각 프로젝트 배경색 */
+#javaNyangWrap { background: #E8F4FD; }
+#hdexWrap { background: #F7F7F7; }
+#mMallWrap { background: #E6F1FB; }
+#madecaWrap { background: #F4ECF6; }
+
+/* 공통 좌측 컨텐츠 스타일 */
+.project-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  padding-right: clamp(20px, 5vw, 50px);
+}
+
+.project-left h1 {
+  color: #26290E;
+  font-size: clamp(1.5rem, 2vw, 2rem);
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.project-left h2 {
+  font-size: clamp(3rem, 6vw, 5rem);
+  font-weight: bold;
+  letter-spacing: -3px;
+  margin-bottom: 30px;
+}
+
+.project-left h3 {
+  font-size: clamp(2rem, 4vw, 3.44rem);
+  line-height: 1.2;
+  letter-spacing: -3px;
+  margin-bottom: 60px;
+}
+
+.project-info {
+  margin-bottom: 40px;
+}
+
+.project-info dl {
+  display: flex;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+.project-info dt {
+  margin-right: 15px;
+  font-size: clamp(1rem, 1.5vw, 1.38rem);
+  font-weight: bold;
+  min-width: clamp(100px, 12vw, 120px);
+}
+
+.project-info dd {
+  font-size: clamp(1rem, 1.5vw, 1.38rem);
+  margin-right: 10px;
+}
+
+.project-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.project-buttons li a {
+  display: block;
+  font-size: clamp(0.7rem, 1vw, 0.88rem);
+  color: #414141;
+  width: clamp(90px, 10vw, 115px);
+  line-height: 30px;
+  text-align: center;
+  border: 1px solid #868686;
+  transition: all 0.3s;
+}
+
+.project-buttons li:hover a {
+  color: #f2f2f2;
+  background-color: #414141;
+}
+
+/* 공통 우측 이미지 스타일 */
+.project-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.project-right img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* madeca의 특별한 버튼 스타일 (기존 코드에서 inline-block이었음) */
+#madecaWrap .project-buttons li a {
+  display: inline-block;
+}
