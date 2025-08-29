@@ -9,13 +9,27 @@ ul,ol,li,dl,dt,dd,blockquote,q,video,img
 table, tr,td,th,thead,tfoot,tbody,
 form,fieldset,legend,input,textarea,button,select,option,label,
 div,section,article,header,nav,main,aside,footer,address,
-figure,figcaption,sup,sub,em,strong,span,i,del,s,a,code,mark{
-  margin: 0; padding: 0; line-height: 1.0;
-  font-size: 16px; font-weight: 400; font-style: normal;
+figure,figcaption,sup,sub,em,strong,span,i,del,s,a,code,mark
+{
+  margin: 0;
+  padding: 0;
+  line-height: 1.0;
+  font-size: 16px;
+  font-weight: 400;
+  font-style: normal;
   list-style:none;
   font-family: "Noto Sans KR", sans-serif;
 }
-a{text-decoration: none; color: inherit;}
-table, tr, td, th{border-collapse: collapse;}
-button{cursor: pointer;}
-img{vertical-align: top;}
+a{
+  text-decoration: none;
+  color: inherit;
+}
+table, tr, td, th{
+  border-collapse: collapse;
+}
+button{
+  cursor: pointer;
+}
+img{
+  vertical-align: top;
+}

@@ -1,102 +1,239 @@
-// 문서가 준비되면 실행
-$(document).ready(function() {
-  
-  // 네비게이션 클릭 이벤트 (기존 코드 정리)
+$(document).ready(function () {
+
+  // 슬라이더 상태 관리
+  const sliders = {
+    fullStack: {
+      currentSlide: 0,
+      totalSlides: 2
+    },
+    webDesign: {
+      currentSlide: 0,
+      totalSlides: 3
+    }
+  };
+
+  // 네비게이션 기능
   function initNavigation() {
-    $('nav ul li').on('click', function() {
+    $('nav ul li').on('click', function () {
       $(this).addClass('on').siblings().removeClass('on');
     });
   }
-  
-  // 부드러운 스크롤 기능 추가
+
+  // 즉시 스크롤 기능 (애니메이션 제거)
   function initSmoothScroll() {
-    $('a[href^="#"]').on('click', function(e) {
+    $('a[href^="#"]').on('click', function (e) {
       e.preventDefault();
-      
+
       const target = this.hash;
       const $targetElement = $(target);
-      
+
       if ($targetElement.length) {
-        $('html, body').animate({
-          scrollTop: $targetElement.offset().top
-        }, 800);
+        const targetTop = $targetElement.offset().top;
+        $(window).scrollTop(targetTop);
       }
     });
   }
-  
-  // 스크롤 위치에 따른 네비게이션 하이라이트
-  function initScrollSpy() {
-    $(window).on('scroll', function() {
-      const scrollPosition = $(window).scrollTop() + 100;
-      const sections = ['profileWrap', 'javaNyangWrap', 'hdexWrap'];
-      
-      sections.forEach(function(sectionId, index) {
+
+  // 섹션별 마우스 휠 네비게이션
+  function initWheelNavigation() {
+    let isScrolling = false;
+    const sections = ['profileWrap', 'fullStackWrap', 'webDesignWrap'];
+    let currentSectionIndex = 0;
+
+    function getCurrentSection() {
+      const scrollPosition = $(window).scrollTop() + $(window).height() / 2;
+
+      sections.forEach(function (sectionId, index) {
         const $section = $('#' + sectionId);
         if ($section.length) {
           const sectionTop = $section.offset().top;
           const sectionBottom = sectionTop + $section.outerHeight();
-          
+
           if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
-            $('nav ul li').removeClass('on');
-            $('nav ul li').eq(index + 1).addClass('on');
+            currentSectionIndex = index;
           }
         }
       });
+    }
+
+    function goToSection(index) {
+      if (index >= 0 && index < sections.length) {
+        const $targetSection = $('#' + sections[index]);
+        if ($targetSection.length) {
+          $(window).scrollTop($targetSection.offset().top);
+
+          // 네비게이션 하이라이트 업데이트
+          $('nav ul li').removeClass('on');
+          $('nav ul li').eq(index + 1).addClass('on');
+        }
+      }
+    }
+
+    // 마우스 휠 이벤트
+    $(window).on('wheel', function (e) {
+      if (isScrolling) return;
+
+      isScrolling = true;
+
+      const delta = e.originalEvent.deltaY;
+      getCurrentSection();
+
+      if (delta > 0) {
+        if (currentSectionIndex < sections.length - 1) {
+          goToSection(currentSectionIndex + 1);
+        }
+      } else {
+        if (currentSectionIndex > 0) {
+          goToSection(currentSectionIndex - 1);
+        }
+      }
+
+      setTimeout(function () {
+        isScrolling = false;
+      }, 800);
+
+      e.preventDefault();
+    });
+
+    getCurrentSection();
+  }
+
+  function showSlide(sliderType, slideIndex) {
+    const $container = sliderType === 'fullStack' ? $('#fullStackWrap') : $('#webDesignWrap');
+    const $slides = $container.find('.slide');
+    const $indicators = $container.find('.indicator');
+
+    $slides.removeClass('active prev');
+    $slides.eq(slideIndex).addClass('active');
+    $indicators.removeClass('active');
+    $indicators.eq(slideIndex).addClass('active');
+    sliders[sliderType].currentSlide = slideIndex;
+  }
+
+  // 슬라이더 변경 함수
+  function changeSlide(sliderType, direction) {
+    const slider = sliders[sliderType];
+    let newIndex = slider.currentSlide + direction;
+
+    if (newIndex >= slider.totalSlides) {
+      newIndex = 0;
+    } else if (newIndex < 0) {
+      newIndex = slider.totalSlides - 1;
+    }
+
+    showSlide(sliderType, newIndex);
+  }
+
+  // 슬라이더 컨트롤 초기화
+  function initSliderControls() {
+    $('.slider-btn').on('click', function () {
+      const $container = $(this).closest('.slider-container');
+      const isFullStack = $container.attr('id') === 'fullStackWrap';
+      const sliderType = isFullStack ? 'fullStack' : 'webDesign';
+      const direction = $(this).hasClass('prev-btn') ? -1 : 1;
+      changeSlide(sliderType, direction);
+    });
+
+    $('.indicator').on('click', function () {
+      const $container = $(this).closest('.slider-container');
+      const isFullStack = $container.attr('id') === 'fullStackWrap';
+      const sliderType = isFullStack ? 'fullStack' : 'webDesign';
+      const slideIndex = parseInt($(this).data('slide'));
+      goToSlide(sliderType, slideIndex);
     });
   }
-  
-  // 외부 링크 안전하게 열기
+
+  function initKeyboardNavigation() {
+    $(document).on('keydown', function (e) {
+      const scrollPosition = $(window).scrollTop() + $(window).height() / 2;
+      let currentSliderType = null;
+
+      $('#fullStackWrap, #webDesignWrap').each(function () {
+        const sectionTop = $(this).offset().top;
+        const sectionBottom = sectionTop + $(this).outerHeight();
+
+        if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+          currentSliderType = $(this).attr('id') === 'fullStackWrap' ? 'fullStack' : 'webDesign';
+          return false;
+        }
+      });
+
+      if (currentSliderType) {
+        if (e.keyCode === 37) {
+          e.preventDefault();
+          changeSlide(currentSliderType, -1);
+        } else if (e.keyCode === 39) {
+          e.preventDefault();
+          changeSlide(currentSliderType, 1);
+        }
+      }
+    });
+  }
+
+  // 터치/스와이프 지원
+  function initTouchSupport() {
+    let startX = 0;
+    let startY = 0;
+    let isScrolling = undefined;
+
+    $('.slider-container').on('touchstart', function (e) {
+      startX = e.originalEvent.touches[0].pageX;
+      startY = e.originalEvent.touches[0].pageY;
+      isScrolling = undefined;
+    });
+
+    $('.slider-container').on('touchmove', function (e) {
+      if (e.originalEvent.touches.length > 1) return;
+
+      const currentX = e.originalEvent.touches[0].pageX;
+      const currentY = e.originalEvent.touches[0].pageY;
+
+      if (isScrolling === undefined) {
+        isScrolling = Math.abs(currentY - startY) > Math.abs(currentX - startX);
+      }
+
+      if (!isScrolling) {
+        e.preventDefault();
+      }
+    });
+
+    $('.slider-container').on('touchend', function (e) {
+      if (isScrolling === false) {
+        const endX = e.originalEvent.changedTouches[0].pageX;
+        const diff = startX - endX;
+        const threshold = 50;
+
+        if (Math.abs(diff) > threshold) {
+          const sliderType = $(this).attr('id') === 'fullStackWrap' ? 'fullStack' : 'webDesign';
+          const direction = diff > 0 ? 1 : -1;
+          changeSlide(sliderType, direction);
+        }
+      }
+    });
+  }
+
   function initExternalLinks() {
-    $('a[target="_blank"]').on('click', function(e) {
-      // 기본 동작을 막지 않고 그대로 실행
-      console.log('외부 링크 열기: ' + $(this).attr('href'));
+    $('a[target="_blank"]').on('click', function (e) {
     });
   }
-  
-  // 버튼 호버 효과 개선
-  function initButtonEffects() {
-    $('.button li a').on('mouseenter', function() {
-      $(this).stop().animate({
-        backgroundColor: '#414141',
-        color: '#f2f2f2'
-      }, 200);
-    }).on('mouseleave', function() {
-      $(this).stop().animate({
-        backgroundColor: 'transparent',
-        color: '#414141'
-      }, 200);
-    });
-  }
-  
-  // 이미지 로딩 에러 처리
+
   function initImageErrorHandling() {
-    $('img').on('error', function() {
-      console.log('이미지 로딩 실패: ' + $(this).attr('src'));
-      // 대체 이미지나 처리 로직을 여기에 추가할 수 있습니다.
+    $('img').on('error', function () {
+      $(this).attr('alt', '이미지를 불러올 수 없습니다.');
     });
   }
-  
-  // 페이지 로딩 완료 후 페이드인 효과
-  function initPageAnimation() {
-    $('body').css('opacity', '0').animate({
-      opacity: 1
-    }, 1000);
-  }
-  
-  // 모든 초기화 함수 실행
+
   function init() {
     initNavigation();
     initSmoothScroll();
-    initScrollSpy();
+    initWheelNavigation();
+    initSliderControls();
+    initKeyboardNavigation();
+    initTouchSupport();
     initExternalLinks();
-    initButtonEffects();
     initImageErrorHandling();
-    initPageAnimation();
-    
-    console.log('포트폴리오 스크립트 초기화 완료');
   }
-  
-  // 초기화 실행
+
   init();
-  
+
 });

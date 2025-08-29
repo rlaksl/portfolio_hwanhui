@@ -1,5 +1,5 @@
 /* ===================================페이지 공통 스타일 */
-body, html {
+html, body {
   scroll-behavior: smooth;
 }
 
@@ -21,7 +21,7 @@ nav ul li {
   margin-left: 40px;
   font-family: "Red Hat Mono", monospace;
   color: #26290E;
-  font-size: clamp(1rem, 1.5vw, 1.3rem);
+  font-size: 1.3rem;
   cursor: pointer;
   padding-bottom: 10px;
 }
@@ -43,7 +43,7 @@ ul li.on::after {
 /* ===================================ProfileWrap 시작 */
 #profileWrap {
   height: 100vh;
-  padding: 0 clamp(30px, 8vw, 111px);
+  padding: 0 111px;
   background-color: #F7FFF7;
   color: #6C6A5D;
   display: flex;
@@ -52,7 +52,7 @@ ul li.on::after {
 }
 
 #profileWrap > p {
-  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-size: 2rem;
   padding-top: 111px;
   margin-bottom: 60px;
 }
@@ -76,7 +76,7 @@ ul li.on::after {
 
 #profileWrap .pro_left .name {
   margin-bottom: 26px;
-  font-size: 1.25rem;
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
   font-weight: 600;
   color: #6C6A5D;
 }
@@ -84,7 +84,7 @@ ul li.on::after {
 #profileWrap .pro_left dl {
   display: flex;
   margin-bottom: 10px;
-  font-size: 1.06rem;
+  font-size: clamp(0.9rem, 1.2vw, 1.06rem);
 }
 
 #profileWrap .pro_left dl dt {
@@ -112,18 +112,18 @@ ul li.on::after {
 
 #profileWrap .pro_right dl {
   margin-bottom: 50px;
-  font-size: 1.06rem;
+  font-size: clamp(0.9rem, 1.2vw, 1.06rem);
 }
 
 #profileWrap .pro_right dl dt {
   margin-bottom: 26px;
-  font-size: 1.25rem;
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
   font-weight: bold;
 }
 
 #profileWrap .pro_right dl dd {
   margin-bottom: 20px;
-  font-size: 1.06rem;
+  font-size: clamp(0.9rem, 1.2vw, 1.06rem);
 }
 
 #profileWrap .pro_right dl dd span {
@@ -137,7 +137,7 @@ ul li.on::after {
 
 #profileWrap .pro_right .tool p {
   margin-bottom: 26px;
-  font-size: 1.25rem;
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
   font-weight: bold;
 }
 
@@ -150,27 +150,52 @@ ul li.on::after {
   margin-right: 12px;
 }
 
-/* ===================================프로젝트 공통 스타일 */
-#javaNyangWrap,
-#hdexWrap,
-#mMallWrap,
-#madecaWrap {
-  display: flex;
-  width: 100%;
+/* ===================================슬라이더 공통 스타일 */
+.slider-container {
+  position: relative;
   height: 100vh;
-  padding: 0 clamp(30px, 8vw, 111px);
-  justify-content: space-between;
-  align-items: center;
+  overflow: hidden;
   box-sizing: border-box;
 }
 
-/* 각 프로젝트 배경색 */
-#javaNyangWrap { background: #E8F4FD; }
-#hdexWrap { background: #F7F7F7; }
-#mMallWrap { background: #E6F1FB; }
-#madecaWrap { background: #F4ECF6; }
+.slider-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
 
-/* 공통 좌측 컨텐츠 스타일 */
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 0 180px;
+  box-sizing: border-box;
+  opacity: 0;
+  transform: translateX(50px);
+  transition: all 0.4s ease-in-out;
+}
+
+.slide.active {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
+
+.slide.prev {
+  opacity: 0;
+  transform: translateX(-50px);
+}
+
+/* 슬라이드별 배경색 */
+#fullStackWrap .slide:nth-child(1) { background: #F8F5FF; }
+#fullStackWrap .slide:nth-child(2) { background: #FFF7ED; }
+
+#webDesignWrap .slide:nth-child(1) { background: #F7F7F7; }
+#webDesignWrap .slide:nth-child(2) { background: #E6F1FB; }
+#webDesignWrap .slide:nth-child(3) { background: #F4ECF6; }
+
+/* 프로젝트 공통 스타일 */
 .project-left {
   flex: 1;
   display: flex;
@@ -244,7 +269,6 @@ ul li.on::after {
   background-color: #414141;
 }
 
-/* 공통 우측 이미지 스타일 */
 .project-right {
   flex: 1;
   display: flex;
@@ -259,7 +283,70 @@ ul li.on::after {
   object-fit: contain;
 }
 
-/* madeca의 특별한 버튼 스타일 (기존 코드에서 inline-block이었음) */
-#madecaWrap .project-buttons li a {
-  display: inline-block;
+/* ===================================슬라이더 컨트롤 */
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  width: 80px;
+  height: 80px;
+  transition: all 0.2s ease;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slider-btn .material-symbols-outlined {
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 200,
+    'GRAD' -25,
+    'opsz' 48;
+  font-size: 64px;
+  color: #6C6A5D;
+  transition: all 0.2s ease;
+}
+
+.prev-btn {
+  left: 80px;
+}
+
+.next-btn {
+  right: 80px;
+}
+
+.slider-btn:hover .material-symbols-outlined {
+  color: #26290E;
+  transform: scale(1.2);
+}
+
+/* 슬라이더 인디케이터 */
+.slider-indicators {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+  z-index: 100;
+}
+
+.indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(108, 106, 93, 0.4);
+  transition: all 0.3s ease;
+}
+
+.indicator.active {
+  background: #6C6A5D;
+  transform: scale(1.2);
+}
+
+.indicator:hover {
+  background: rgba(108, 106, 93, 0.8);
 }
