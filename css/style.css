@@ -48,7 +48,6 @@ ul li.on::after {
   color: #6C6A5D;
   display: flex;
   flex-direction: column;
-  box-sizing: border-box;
 }
 
 #profileWrap > p {
@@ -155,7 +154,6 @@ ul li.on::after {
   position: relative;
   height: 100vh;
   overflow: hidden;
-  box-sizing: border-box;
 }
 
 .slider-wrapper {
@@ -170,16 +168,15 @@ ul li.on::after {
   height: 100vh;
   display: flex;
   align-items: center;
-  padding: 0 180px;
-  box-sizing: border-box;
+  padding: 0 clamp(20px, 10vw, 180px); /* 반응형 패딩으로 수정 */
   opacity: 0;
   transform: translateX(50px);
   transition: all 0.4s ease-in-out;
 }
 
 .slide.active {
-  opacity: 1 !important;
-  transform: translateX(0) !important;
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .slide.prev {
@@ -191,9 +188,9 @@ ul li.on::after {
 #fullStackWrap .slide:nth-child(1) { background: #F8F5FF; }
 #fullStackWrap .slide:nth-child(2) { background: #FFF7ED; }
 
-#webDesignWrap .slide:nth-child(1) { background: #F7F7F7; }
-#webDesignWrap .slide:nth-child(2) { background: #E6F1FB; }
-#webDesignWrap .slide:nth-child(3) { background: #F4ECF6; }
+#webDesignWrap .slide:nth-child(1) { background: #E6F1FB; }
+#webDesignWrap .slide:nth-child(2) { background: #F4ECF6; }
+#webDesignWrap .slide:nth-child(3) { background: #F7F7F7; }
 
 /* 프로젝트 공통 스타일 */
 .project-left {
@@ -203,6 +200,8 @@ ul li.on::after {
   justify-content: center;
   height: 100%;
   padding-right: clamp(20px, 5vw, 50px);
+  position: relative;
+  z-index: 100;
 }
 
 .project-left h1 {
@@ -251,6 +250,8 @@ ul li.on::after {
 .project-buttons {
   display: flex;
   gap: 15px;
+  position: relative;
+  z-index: 300; /* 정리된 z-index */
 }
 
 .project-buttons li a {
@@ -262,6 +263,8 @@ ul li.on::after {
   text-align: center;
   border: 1px solid #868686;
   transition: all 0.3s;
+  position: relative;
+  z-index: 301; /* !important 제거하고 깔끔하게 정리 */
 }
 
 .project-buttons li:hover a {
@@ -293,7 +296,7 @@ ul li.on::after {
   width: 80px;
   height: 80px;
   transition: all 0.2s ease;
-  z-index: 100;
+  z-index: 200; /* 정리된 z-index */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -331,7 +334,7 @@ ul li.on::after {
   transform: translateX(-50%);
   display: flex;
   gap: 12px;
-  z-index: 100;
+  z-index: 200; /* 정리된 z-index */
 }
 
 .indicator {
@@ -349,4 +352,12 @@ ul li.on::after {
 
 .indicator:hover {
   background: rgba(108, 106, 93, 0.8);
+}
+
+.slide:not(.active) {
+  pointer-events: none;
+}
+
+.slide.active {
+  pointer-events: auto;
 }

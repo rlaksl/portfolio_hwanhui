@@ -1,40 +1,44 @@
 $(document).ready(function () {
+  // ================== 슬라이더 상태 동적 계산
+  const sliderKeys = ['#fullStackWrap', '#webDesignWrap'];
+  const sliders = {};
+  sliderKeys.forEach((id) => {
+    const $c = $(id);
+    sliders[id] = {
+      currentSlide: Math.max(0, $c.find('.slide').index($c.find('.slide.active'))),
+      totalSlides: $c.find('.slide').length,
+    };
+  });
 
-  // 슬라이더 상태 관리
-  const sliders = {
-    fullStack: {
-      currentSlide: 0,
-      totalSlides: 2
-    },
-    webDesign: {
-      currentSlide: 0,
-      totalSlides: 3
-    }
-  };
-
-  // 네비게이션 기능
+  // ================== 네비게이션 클릭 시 하이라이트
   function initNavigation() {
-    $('nav ul li').on('click', function () {
-      $(this).addClass('on').siblings().removeClass('on');
+    $('nav ul li a').on('click', function () {
+      $('nav ul li').removeClass('on');
+      $(this).parent().addClass('on');
     });
   }
 
-  // 즉시 스크롤 기능 (애니메이션 제거)
+  // ================== 스무스 스크롤 & 네비게이션 동기화
   function initSmoothScroll() {
     $('a[href^="#"]').on('click', function (e) {
       e.preventDefault();
-
       const target = this.hash;
       const $targetElement = $(target);
-
       if ($targetElement.length) {
         const targetTop = $targetElement.offset().top;
-        $(window).scrollTop(targetTop);
+        $('html, body').animate({ scrollTop: targetTop }, 500);
+
+        const sections = ['#profileWrap', '#fullStackWrap', '#webDesignWrap'];
+        const idx = sections.indexOf(target);
+        if (idx !== -1) {
+          $('nav ul li').removeClass('on');
+          $('nav ul li').eq(idx).addClass('on');
+        }
       }
     });
   }
 
-  // 섹션별 마우스 휠 네비게이션
+  // ================== 섹션별 마우스 휠 네비게이션
   function initWheelNavigation() {
     let isScrolling = false;
     const sections = ['profileWrap', 'fullStackWrap', 'webDesignWrap'];
@@ -42,13 +46,11 @@ $(document).ready(function () {
 
     function getCurrentSection() {
       const scrollPosition = $(window).scrollTop() + $(window).height() / 2;
-
       sections.forEach(function (sectionId, index) {
         const $section = $('#' + sectionId);
         if ($section.length) {
           const sectionTop = $section.offset().top;
           const sectionBottom = sectionTop + $section.outerHeight();
-
           if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
             currentSectionIndex = index;
           }
@@ -60,169 +62,137 @@ $(document).ready(function () {
       if (index >= 0 && index < sections.length) {
         const $targetSection = $('#' + sections[index]);
         if ($targetSection.length) {
-          $(window).scrollTop($targetSection.offset().top);
-
-          // 네비게이션 하이라이트 업데이트
+          $('html, body').animate({ scrollTop: $targetSection.offset().top }, 500);
           $('nav ul li').removeClass('on');
-          $('nav ul li').eq(index + 1).addClass('on');
+          $('nav ul li').eq(index).addClass('on');
         }
       }
     }
 
-    // 마우스 휠 이벤트
-    $(window).on('wheel', function (e) {
-      if (isScrolling) return;
+    window.addEventListener(
+      'wheel',
+      function (e) {
+        if (isScrolling) return;
+        isScrolling = true;
+        const delta = e.deltaY;
+        getCurrentSection();
+        let shouldPreventDefault = false;
 
-      isScrolling = true;
-
-      const delta = e.originalEvent.deltaY;
-      getCurrentSection();
-
-      if (delta > 0) {
-        if (currentSectionIndex < sections.length - 1) {
-          goToSection(currentSectionIndex + 1);
+        if (delta > 0) {
+          if (currentSectionIndex < sections.length - 1) {
+            goToSection(currentSectionIndex + 1);
+            shouldPreventDefault = true;
+          }
+        } else {
+          if (currentSectionIndex > 0) {
+            goToSection(currentSectionIndex - 1);
+            shouldPreventDefault = true;
+          }
         }
-      } else {
-        if (currentSectionIndex > 0) {
-          goToSection(currentSectionIndex - 1);
-        }
-      }
 
-      setTimeout(function () {
-        isScrolling = false;
-      }, 800);
-
-      e.preventDefault();
-    });
+        if (shouldPreventDefault) e.preventDefault();
+        setTimeout(function () { isScrolling = false; }, 800);
+      },
+      { passive: false }
+    );
 
     getCurrentSection();
   }
 
-  function showSlide(sliderType, slideIndex) {
-    const $container = sliderType === 'fullStack' ? $('#fullStackWrap') : $('#webDesignWrap');
+  // ================== 슬라이드 표시
+  function showSlide(sliderKey, slideIndex) {
+    const $container = $(sliderKey);
     const $slides = $container.find('.slide');
     const $indicators = $container.find('.indicator');
 
-    $slides.removeClass('active prev');
-    $slides.eq(slideIndex).addClass('active');
+    $slides.removeClass('active').attr({ 'aria-hidden': 'true', tabIndex: -1 });
+    $slides.eq(slideIndex).addClass('active').attr({ 'aria-hidden': 'false', tabIndex: 0 });
     $indicators.removeClass('active');
     $indicators.eq(slideIndex).addClass('active');
-    sliders[sliderType].currentSlide = slideIndex;
+    sliders[sliderKey].currentSlide = slideIndex;
   }
 
-  // 슬라이더 변경 함수
-  function changeSlide(sliderType, direction) {
-    const slider = sliders[sliderType];
+  // ================== 슬라이드 변경
+  function changeSlide(sliderKey, direction) {
+    const slider = sliders[sliderKey];
     let newIndex = slider.currentSlide + direction;
-
-    if (newIndex >= slider.totalSlides) {
-      newIndex = 0;
-    } else if (newIndex < 0) {
-      newIndex = slider.totalSlides - 1;
-    }
-
-    showSlide(sliderType, newIndex);
+    if (newIndex >= slider.totalSlides) newIndex = 0;
+    else if (newIndex < 0) newIndex = slider.totalSlides - 1;
+    showSlide(sliderKey, newIndex);
   }
 
-  // 슬라이더 컨트롤 초기화
+  // ================== 컨트롤 버튼
   function initSliderControls() {
-    $('.slider-btn').on('click', function () {
+    $('.slider-btn').on('click', function (e) {
+      e.preventDefault(); e.stopPropagation();
       const $container = $(this).closest('.slider-container');
-      const isFullStack = $container.attr('id') === 'fullStackWrap';
-      const sliderType = isFullStack ? 'fullStack' : 'webDesign';
+      const sliderKey = '#' + $container.attr('id');
       const direction = $(this).hasClass('prev-btn') ? -1 : 1;
-      changeSlide(sliderType, direction);
+      changeSlide(sliderKey, direction);
     });
 
-    $('.indicator').on('click', function () {
+    $('.indicator').on('click', function (e) {
+      e.preventDefault(); e.stopPropagation();
       const $container = $(this).closest('.slider-container');
-      const isFullStack = $container.attr('id') === 'fullStackWrap';
-      const sliderType = isFullStack ? 'fullStack' : 'webDesign';
-      const slideIndex = parseInt($(this).data('slide'));
-      goToSlide(sliderType, slideIndex);
+      const sliderKey = '#' + $container.attr('id');
+      const slideIndex = parseInt($(this).data('slide'), 10);
+      showSlide(sliderKey, slideIndex);
     });
   }
 
+  // ================== 키보드 네비게이션 (좌/우)
   function initKeyboardNavigation() {
     $(document).on('keydown', function (e) {
       const scrollPosition = $(window).scrollTop() + $(window).height() / 2;
-      let currentSliderType = null;
+      let currentSliderKey = null;
 
       $('#fullStackWrap, #webDesignWrap').each(function () {
         const sectionTop = $(this).offset().top;
         const sectionBottom = sectionTop + $(this).outerHeight();
-
         if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
-          currentSliderType = $(this).attr('id') === 'fullStackWrap' ? 'fullStack' : 'webDesign';
+          currentSliderKey = '#' + $(this).attr('id');
           return false;
         }
       });
 
-      if (currentSliderType) {
-        if (e.keyCode === 37) {
-          e.preventDefault();
-          changeSlide(currentSliderType, -1);
-        } else if (e.keyCode === 39) {
-          e.preventDefault();
-          changeSlide(currentSliderType, 1);
-        }
+      if (currentSliderKey) {
+        if (e.key === 'ArrowLeft') { e.preventDefault(); changeSlide(currentSliderKey, -1); }
+        else if (e.key === 'ArrowRight') { e.preventDefault(); changeSlide(currentSliderKey, 1); }
       }
     });
   }
 
-  // 터치/스와이프 지원
+  // ================== 터치/스와이프
   function initTouchSupport() {
-    let startX = 0;
-    let startY = 0;
-    let isScrolling = undefined;
-
-    $('.slider-container').on('touchstart', function (e) {
-      startX = e.originalEvent.touches[0].pageX;
-      startY = e.originalEvent.touches[0].pageY;
-      isScrolling = undefined;
-    });
-
-    $('.slider-container').on('touchmove', function (e) {
-      if (e.originalEvent.touches.length > 1) return;
-
-      const currentX = e.originalEvent.touches[0].pageX;
-      const currentY = e.originalEvent.touches[0].pageY;
-
-      if (isScrolling === undefined) {
-        isScrolling = Math.abs(currentY - startY) > Math.abs(currentX - startX);
-      }
-
-      if (!isScrolling) {
-        e.preventDefault();
-      }
-    });
-
-    $('.slider-container').on('touchend', function (e) {
-      if (isScrolling === false) {
-        const endX = e.originalEvent.changedTouches[0].pageX;
-        const diff = startX - endX;
-        const threshold = 50;
-
-        if (Math.abs(diff) > threshold) {
-          const sliderType = $(this).attr('id') === 'fullStackWrap' ? 'fullStack' : 'webDesign';
-          const direction = diff > 0 ? 1 : -1;
-          changeSlide(sliderType, direction);
+    let startX = 0; let isScrolling;
+    $('.slider-container').each(function () {
+      const element = this;
+      element.addEventListener('touchstart', function (e) {
+        startX = e.touches[0].pageX; isScrolling = undefined;
+      }, { passive: true });
+      element.addEventListener('touchmove', function (e) {
+        if (e.touches.length > 1) return;
+        const currentX = e.touches[0].pageX; const currentY = e.touches[0].pageY;
+        if (isScrolling === undefined) { isScrolling = Math.abs(currentY - e.touches[0].pageY) > Math.abs(currentX - startX); }
+        if (!isScrolling) { e.preventDefault(); }
+      }, { passive: false });
+      element.addEventListener('touchend', function (e) {
+        if (isScrolling === false) {
+          const endX = e.changedTouches[0].pageX; const diff = startX - endX; const threshold = 50;
+          if (Math.abs(diff) > threshold) {
+            const $container = $(element); const sliderKey = '#' + $container.attr('id'); const direction = diff > 0 ? 1 : -1; changeSlide(sliderKey, direction);
+          }
         }
-      }
+      }, { passive: true });
     });
   }
 
+  // ================== 외부 링크 보안
   function initExternalLinks() {
-    $('a[target="_blank"]').on('click', function (e) {
-    });
+    $('a[href^="http"]').attr('target', '_blank').attr('rel', 'noopener noreferrer');
   }
 
-  function initImageErrorHandling() {
-    $('img').on('error', function () {
-      $(this).attr('alt', '이미지를 불러올 수 없습니다.');
-    });
-  }
-
+  // ================== 초기화 실행
   function init() {
     initNavigation();
     initSmoothScroll();
@@ -231,9 +201,7 @@ $(document).ready(function () {
     initKeyboardNavigation();
     initTouchSupport();
     initExternalLinks();
-    initImageErrorHandling();
   }
 
   init();
-
 });

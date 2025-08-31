@@ -1,35 +1,35 @@
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>사용자 중심 사고를 바탕으로 한 신입 백엔드 개발자 김환희</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-  <link rel="stylesheet" href="./css/base.css">
-  <link rel="stylesheet" href="./css/style.css">
-  <script src="js/jquery-3.7.1.min.js"></script>
-  <script src="js/jquery.mousewheel.min.js"></script>
-  <script src="js/main.js"></script>
-</head>
 
-<body>
-  <div>
-    <nav>
-      <ul>
-        <li class="on"></li>
-        <li><a href="#profileWrap">Profile</a></li>
-        <li><a href="#fullStackWrap">Full Stack</a></li>
-        <li><a href="#webDesignWrap">Web Design</a></li>
-      </ul>
-    </nav>
-  </div>
+  <!-- Icons & Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/base.css" />
   
+</head>
+<body>
+  <nav>
+    <ul>
+      <li class="on"><a href="#profileWrap">Profile</a></li>
+      <li><a href="#fullStackWrap">Full Stack</a></li>
+      <li><a href="#webDesignWrap">Web Design</a></li>
+    </ul>
+  </nav>
+
   <div id="profileWrap">
     <p>My Profile</p>
     <div class="profile">
       <div class="pro_left">
-        <img src="./img/hui.png" alt="프로필사진">
+        <img src="./img/hui.png" alt="프로필사진" />
         <p class="name">김환희</p>
         <dl class="Birth">
           <dt>Birth</dt>
@@ -43,7 +43,7 @@
           <dt>E-mail</dt>
           <dd>eehiuh@email.com</dd>
         </dl>
-      </div><!-- pro_left -->
+      </div>
       <div class="pro_right">
         <dl class="exper">
           <dt>experience</dt>
@@ -65,34 +65,30 @@
         <div class="tool">
           <p>Tool</p>
           <ul>
-            <li><img src="./img/Ps.png" alt="포토샵"></li>
-            <li><img src="./img/Ai.png" alt="일러스트"></li>
-            <li><img src="./img/Figma.png" alt="피그마"></li>
-            <li><img src="./img/html_js_css.png" alt="html, js, css"></li>
+            <li><img src="./img/Ps.png" alt="포토샵" /></li>
+            <li><img src="./img/Ai.png" alt="일러스트" /></li>
+            <li><img src="./img/Figma.png" alt="피그마" /></li>
+            <li><img src="./img/html_js_css.png" alt="html, js, css" /></li>
           </ul>
         </div>
-      </div><!-- pro_right -->
-    </div> <!-- profile -->
+      </div>
+    </div>
     <div class="borderCenter"></div>
-  </div><!-- ProfileWrap -->
-  
+  </div>
+
   <!-- Full Stack Slider Section -->
-  <div id="fullStackWrap" class="slider-container">
+  <div id="fullStackWrap" class="slider-container" aria-label="Full Stack Projects">
     <div class="slider-wrapper">
       <!-- Java Nyang Slide -->
-      <div class="slide active" data-bg="#E8F4FD">
+      <div class="slide active" data-bg="#E8F4FD" aria-hidden="false" tabindex="0">
         <div class="project-left">
           <h1>Full Stack</h1>
           <h2>Java Nyang</h2>
-          <h3>concept on<br>desktop & mobile</h3>
+          <h3>concept on<br />desktop & mobile</h3>
           <div class="project-info">
             <dl>
               <dt>제작 기간:</dt>
               <dd>25.05.07 - 25.07.10 (9주, 320시간)</dd>
-            </dl>
-            <!--<dl>
-              <dt>제작 페이지:</dt>
-              <dd>메인, 회원가입/로그인, 마이페이지, 게시판</dd> -->
             </dl>
             <dl>
               <dt>Frontend:</dt>
@@ -104,35 +100,31 @@
             </dl>
             <dl>
               <dt>개발 도구:</dt>
-              <dd><img src="./img/html_js_css.png" alt="HTML/CSS/JS"></dd>
-              <dd><img src="./img/Figma.png" alt="피그마"></dd>
+              <dd><img src="./img/html_js_css.png" alt="HTML/CSS/JS" /></dd>
+              <dd><img src="./img/Figma.png" alt="피그마" /></dd>
             </dl>
           </div>
           <ul class="project-buttons">
-            <li><a href="https://github.com/hyunsupLee/JavaNyang.git" target="_blank">GitHub</a></li>
-            <li><a href="https://hyunsuplee.github.io/JavaNyang/" target="_blank">결과보기</a></li>
+            <li><a href="https://github.com/hyunsupLee/JavaNyang.git" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+            <li><a href="https://hyunsuplee.github.io/JavaNyang/" target="_blank" rel="noopener noreferrer">결과보기</a></li>
           </ul>
         </div>
         <div class="project-right">
-          <img src="./img/JavaNyang.png" alt="자바냥">
+          <img src="./img/JavaNyang.png" alt="자바냥" />
         </div>
       </div>
-      
+
       <!-- StudyO Slide -->
-      <div class="slide" data-bg="#F0F8FF">
+      <div class="slide" data-bg="#F0F8FF" aria-hidden="true" tabindex="-1">
         <div class="project-left">
           <h1>Full Stack</h1>
           <h2>StudyO</h2>
-          <h3>concept on<br>desktop</h3>
+          <h3>concept on<br />desktop</h3>
           <div class="project-info">
             <dl>
               <dt>제작 기간:</dt>
               <dd>25.07.14 - 25.08.20</dd>
             </dl>
-            <!--<dl>
-              <dt>제작 페이지:</dt>
-              <dd>메인, 스터디룸 예약, 마이페이지, 관리자</dd>
-            </dl> -->
             <dl>
               <dt>Frontend:</dt>
               <dd>React, React Router, Redux</dd>
@@ -151,79 +143,46 @@
             </dl>
             <dl>
               <dt>개발 도구:</dt>
-              <dd><img src="./img/html_js_css.png" alt="HTML/CSS/JS"></dd>
-              <dd><img src="./img/Figma.png" alt="피그마"></dd>
+              <dd><img src="./img/html_js_css.png" alt="HTML/CSS/JS" /></dd>
+              <dd><img src="./img/Figma.png" alt="피그마" /></dd>
             </dl>
           </div>
           <ul class="project-buttons">
-            <li><a href="https://github.com/hyunsupLee/react-study-o.git" target="_blank">GitHub(React)</a></li>
-            <li><a href="https://github.com/hyunsupLee/tjspring.git" target="_blank">GitHub(Spring)</a></li>
-            <li><a href="https://www.studyo.r-e.kr/" target="_blank">결과보기</a></li>
+            <li><a href="https://github.com/hyunsupLee/react-study-o.git" target="_blank" rel="noopener noreferrer">GitHub(React)</a></li>
+            <li><a href="https://github.com/hyunsupLee/tjspring.git" target="_blank" rel="noopener noreferrer">GitHub(Spring)</a></li>
+            <li><a href="https://www.studyo.r-e.kr/" target="_blank" rel="noopener noreferrer">결과보기</a></li>
           </ul>
         </div>
         <div class="project-right">
-          <img src="./img/studyO.png" alt="스터디오">
+          <img src="./img/studyO.png" alt="스터디오" />
         </div>
       </div>
     </div>
-    
+
     <!-- Slider Controls -->
-    <button class="slider-btn prev-btn">
+    <button class="slider-btn prev-btn" aria-label="이전 슬라이드">
       <span class="material-symbols-outlined">chevron_left</span>
     </button>
-    <button class="slider-btn next-btn">
+    <button class="slider-btn next-btn" aria-label="다음 슬라이드">
       <span class="material-symbols-outlined">chevron_right</span>
     </button>
-    
+
     <!-- Slider Indicators -->
-    <div class="slider-indicators">
-      <span class="indicator active" data-slide="0"></span>
-      <span class="indicator" data-slide="1"></span>
+    <div class="slider-indicators" role="tablist" aria-label="Full Stack 슬라이드 위치">
+      <span class="indicator active" data-slide="0" role="tab" aria-selected="true" aria-controls="fullstack-slide-0"></span>
+      <span class="indicator" data-slide="1" role="tab" aria-selected="false" aria-controls="fullstack-slide-1"></span>
     </div>
-  </div><!-- fullStackWrap -->
-  
+  </div>
+
   <!-- Web Design Slider Section -->
-  <div id="webDesignWrap" class="slider-container">
+  <div id="webDesignWrap" class="slider-container" aria-label="Web Design Projects">
     <div class="slider-wrapper">
-      <!-- HDEX Slide -->
-      <div class="slide active" data-bg="#F7F7F7">
-        <div class="project-left">
-          <h1>Web Design</h1>
-          <h2>HDEX</h2>
-          <h3>concept on<br>desktop</h3>
-          <div class="project-info">
-            <dl>
-              <dt>제작 기간:</dt>
-              <dd>24.08.07 - 13 (5일, 40시간)</dd>
-            </dl>
-            <dl>
-              <dt>제작 페이지:</dt>
-              <dd>index</dd>
-            </dl>
-            <dl>
-              <dt>사용 프로그램:</dt>
-              <dd><img src="./img/Figma.png" alt="피그마"></dd>
-              <dd><img src="./img/Ps.png" alt="포토샵"></dd>
-              <dd><img src="./img/Ai.png" alt="일러스트"></dd>
-              <dd><img src="./img/html_js_css.png" alt="html, js, css"></dd>
-            </dl>
-          </div>
-          <ul class="project-buttons">
-            <li><a href="https://www.figma.com/design/s23xnVymbk6RuhwSxn3K5R/HDEX?t=rc9jB4yMd7g1PMZH-1" target="_blank">와이어프레임</a></li>
-            <li><a href="https://rlaksl.github.io/hdex_project/" target="_blank">결과보기</a></li>
-          </ul>
-        </div>
-        <div class="project-right">
-          <img src="./img/HDEX.png" alt="hdex">
-        </div>
-      </div>
-      
       <!-- M-Mall Slide -->
-      <div class="slide" data-bg="#E6F1FB">
+      <div class="slide" data-bg="#E6F1FB" aria-hidden="true" tabindex="-1">
         <div class="project-left">
           <h1>Web Design</h1>
           <h2>M-Mall</h2>
-          <h3>concept on<br>desktop</h3>
+          <h3>concept on<br />desktop</h3>
           <div class="project-info">
             <dl>
               <dt>제작 기간:</dt>
@@ -235,28 +194,28 @@
             </dl>
             <dl>
               <dt>사용 프로그램:</dt>
-              <dd><img src="./img/Figma.png" alt="피그마"></dd>
-              <dd><img src="./img/Ps.png" alt="포토샵"></dd>
-              <dd><img src="./img/html_js_css.png" alt="html, js, css"></dd>
+              <dd><img src="./img/Figma.png" alt="피그마" /></dd>
+              <dd><img src="./img/Ps.png" alt="포토샵" /></dd>
+              <dd><img src="./img/html_js_css.png" alt="html, js, css" /></dd>
             </dl>
           </div>
           <ul class="project-buttons">
-            <li><a href="https://www.figma.com/design/UG7itBeM6mzU3uAY8uKA7W/%ED%8F%AC%ED%8F%B4-%EA%B8%B0%ED%9A%8D%EC%84%9C--%EB%B0%9C%ED%91%9C-%EB%8C%80%EB%B3%B8?t=3vyVHCn2NuER3U7c-1" target="_blank">기획서</a></li>
-            <li><a href="https://www.figma.com/design/J8MEetycnmffPsvOeYrTUD/M%ED%8F%AC%EC%9D%B8%ED%8A%B8-%EB%AA%B0?node-id=0-1&t=3vyVHCn2NuER3U7c-1" target="_blank">와이어프레임</a></li>
-            <li><a href="https://rlaksl.github.io/M-MALL_project/" target="_blank">결과보기</a></li>
+            <li><a href="https://www.figma.com/design/UG7itBeM6mzU3uAY8uKA7W/%ED%8F%AC%ED%8F%B4-%EA%B8%B0%ED%9A%8D%EC%84%9C--%EB%B0%9C%ED%91%9C-%EB%8C%80%EB%B3%B8?t=3vyVHCn2NuER3U7c-1" target="_blank" rel="noopener noreferrer">기획서</a></li>
+            <li><a href="https://www.figma.com/design/J8MEetycnmffPsvOeYrTUD/M%ED%8F%AC%EC%9D%B8%ED%8A%B8-%EB%AA%B0?node-id=0-1&t=3vyVHCn2NuER3U7c-1" target="_blank" rel="noopener noreferrer">와이어프레임</a></li>
+            <li><a href="https://rlaksl.github.io/M-MALL_project/" target="_blank" rel="noopener noreferrer">결과보기</a></li>
           </ul>
         </div>
         <div class="project-right">
-          <img src="./img/mMall.png" alt="M-Mall">
+          <img src="./img/mMall.png" alt="M-Mall" />
         </div>
       </div>
-      
+
       <!-- MADECA PRIME Slide -->
-      <div class="slide" data-bg="#F4ECF6">
+      <div class="slide" data-bg="#F4ECF6" aria-hidden="true" tabindex="-1">
         <div class="project-left">
           <h1>Web Design</h1>
           <h2>MADECA PRIME</h2>
-          <h3>concept on<br>desktop</h3>
+          <h3>concept on<br />desktop</h3>
           <div class="project-info">
             <dl>
               <dt>제작 기간:</dt>
@@ -268,41 +227,74 @@
             </dl>
             <dl>
               <dt>사용 프로그램:</dt>
-              <dd><img src="./img/Figma.png" alt="피그마"></dd>
-              <dd><img src="./img/Ps.png" alt="포토샵"></dd>
-              <dd><img src="./img/html_js_css.png" alt="html, js, css"></dd>
+              <dd><img src="./img/Figma.png" alt="피그마" /></dd>
+              <dd><img src="./img/Ps.png" alt="포토샵" /></dd>
+              <dd><img src="./img/html_js_css.png" alt="html, js, css" /></dd>
             </dl>
           </div>
           <ul class="project-buttons">
-            <li><a href="https://www.figma.com/design/NGLuNNG5fznjYer3P0tVl0/%EB%A7%88%EB%8D%B0%EC%B9%B4%ED%94%84%EB%9D%BC%EC%9E%84?node-id=231-2&t=AMjy889Fd5ubH1y0-0" target="_blank">와이어프레임</a></li>
-            <li><a href="https://rlaksl.github.io/madecaPrime_project/" target="_blank">결과보기</a></li>
+            <li><a href="https://www.figma.com/design/NGLuNNG5fznjYer3P0tVl0/%EB%A7%88%EB%8D%B0%EC%B9%B4%ED%94%84%EB%9D%BC%EC%9E%84?node-id=231-2&t=AMjy889Fd5ubH1y0-0" target="_blank" rel="noopener noreferrer">와이어프레임</a></li>
+            <li><a href="https://rlaksl.github.io/madecaPrime_project/" target="_blank" rel="noopener noreferrer">결과보기</a></li>
           </ul>
         </div>
         <div class="project-right">
-          <img src="./img/madecaPrime.png" alt="마데카 프라임">
+          <img src="./img/madecaPrime.png" alt="마데카 프라임" />
         </div>
       </div>
+      <!-- HDEX Slide -->
+      <div class="slide active" data-bg="#F7F7F7" aria-hidden="false" tabindex="0">
+        <div class="project-left">
+          <h1>Web Design</h1>
+          <h2>HDEX</h2>
+          <h3>concept on<br />desktop</h3>
+          <div class="project-info">
+            <dl>
+              <dt>제작 기간:</dt>
+              <dd>24.08.07 - 13 (5일, 40시간)</dd>
+            </dl>
+            <dl>
+              <dt>제작 페이지:</dt>
+              <dd>index</dd>
+            </dl>
+            <dl>
+              <dt>사용 프로그램:</dt>
+              <dd><img src="./img/Figma.png" alt="피그마" /></dd>
+              <dd><img src="./img/Ps.png" alt="포토샵" /></dd>
+              <dd><img src="./img/Ai.png" alt="일러스트" /></dd>
+              <dd><img src="./img/html_js_css.png" alt="html, js, css" /></dd>
+            </dl>
+          </div>
+          <ul class="project-buttons">
+            <li><a href="https://www.figma.com/design/s23xnVymbk6RuhwSxn3K5R/HDEX?t=rc9jB4yMd7g1PMZH-1" target="_blank" rel="noopener noreferrer">와이어프레임</a></li>
+            <li><a href="https://rlaksl.github.io/hdex_project/" target="_blank" rel="noopener noreferrer">결과보기</a></li>
+          </ul>
+        </div>
+        <div class="project-right">
+          <img src="./img/HDEX.png" alt="hdex" />
+        </div>
+      </div>
+
     </div>
-    
+
     <!-- Slider Controls -->
-    <button class="slider-btn prev-btn">
+    <button class="slider-btn prev-btn" aria-label="이전 슬라이드">
       <span class="material-symbols-outlined">chevron_left</span>
     </button>
-    <button class="slider-btn next-btn">
+    <button class="slider-btn next-btn" aria-label="다음 슬라이드">
       <span class="material-symbols-outlined">chevron_right</span>
     </button>
-    
-    <!-- Slider Indicators -->
-    <div class="slider-indicators">
-      <span class="indicator active" data-slide="0"></span>
-      <span class="indicator" data-slide="1"></span>
-      <span class="indicator" data-slide="2"></span>
-    </div>
-  </div><!-- webDesignWrap -->
-  
-    </div>
-  </div><!-- webDesignWrap -->
-  
-</body>
 
+    <!-- Slider Indicators -->
+    <div class="slider-indicators" role="tablist" aria-label="Web Design 슬라이드 위치">
+      <span class="indicator active" data-slide="0" role="tab" aria-selected="true" aria-controls="webdesign-slide-0"></span>
+      <span class="indicator" data-slide="1" role="tab" aria-selected="false" aria-controls="webdesign-slide-1"></span>
+      <span class="indicator" data-slide="2" role="tab" aria-selected="false" aria-controls="webdesign-slide-2"></span>
+    </div>
+  </div>
+
+  <!-- jQuery (CDN) -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <!-- Main Script -->
+  <script src="js/main.js"></script>
+</body>
 </html>
