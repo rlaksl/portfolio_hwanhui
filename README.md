@@ -203,7 +203,3 @@ SQLD, ADsP 등 자격증 취득을 통해 이론적 기반을 탄탄히 다져�
 **이메일**: eehiuh@gmail.com  
 **깃허브**: [github.com/rlaksl](https://github.com/rlaksl)  
 **포트폴리오**: [rlaksl.github.io/portfolio_hwanhui](https://rlaksl.github.io/portfolio_hwanhui/)
-
----
-
-*"보이는 것 너머의 세계를 탐구하며, 사용자에게 가치를 전달하는 개발자가 되겠습니다."*
