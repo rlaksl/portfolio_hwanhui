@@ -187,6 +187,7 @@ ul li.on::after {
 /* 슬라이드별 배경색 */
 #fullStackWrap .slide:nth-child(1) { background: #F8F5FF; }
 #fullStackWrap .slide:nth-child(2) { background: #FFF7ED; }
+#fullStackWrap .slide:nth-child(3) { background: #E6F1FB; }
 
 #webDesignWrap .slide:nth-child(1) { background: #E6F1FB; }
 #webDesignWrap .slide:nth-child(2) { background: #F4ECF6; }
