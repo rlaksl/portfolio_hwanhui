@@ -17,59 +17,117 @@
   <link rel="stylesheet" href="css/base.css" />
 
 </head>
-
 <body>
   <nav>
     <ul>
-      <li class="on"><a href="#profileWrap">Profile</a></li>
+      <li class="on"><a href="#aboutWrap">About Me</a></li>
+      <li><a href="#skillsWrap">Skills</a></li>
       <li><a href="#fullStackWrap">Full Stack</a></li>
       <li><a href="#webDesignWrap">Web Design</a></li>
     </ul>
   </nav>
-
-  <div id="profileWrap">
-    <p>My Profile</p>
-    <div class="profile">
-      <div class="pro_left">
-        <img src="./img/hui.png" alt="프로필사진" />
-        <p class="name">김환희</p>
-        <dl class="Birth">
-          <dt>Birth</dt>
-          <dd>1993.11.09</dd>
-        </dl>
-        <dl>
-          <dt>E-mail</dt>
-          <dd>eehiuh@email.com</dd>
-        </dl>
+  <!-- About Me 섹션 -->
+  <div id="aboutWrap">
+    <div class="about-section">
+      <div class="about-header">
+        <h2>ABOUT ME</h2>
       </div>
-      <div class="pro_right">
-        <dl class="exper">
-          <dt>experience</dt>
-          <dd><span class="experUni">2025.04 - </span>학점은행제 컴퓨터공학 학사 과정</dd>
-          <dd><span class="experUni">2022.09 - </span>방송통신대학교 법학과 (재학)</dd>
-          <dd><span>2025.01 - 2025.09</span>프로젝트 기반 풀스택 부트캠프 수료</dd>
-          <dd><span>2024.05 - 2024.10</span>UI/UX 반응형 웹디자인&웹퍼블리셔 양성과정 수료</dd>
-          <dd><span>2022.06 - 2024.04</span>교육법인 쿰101 (정규직)</dd>
-          <dd><span>2022.01 - 2022.07</span>무인양품 (파트타이머)</dd>
-          <dd><span>2018.01 - 2021.07</span>무인양품 (정규직)</dd>
-          <dd><span>2009.03 - 2012.02</span>부평디자인과학고등학교 (제품모델링디자인과)</dd>
-        </dl>
-        <dl class="license">
-          <dt>License</dt>
-          <dd><span>2011.07 </span>전산응용기계제도기능사(취득)</dd>
-        </dl>
-        <div class="tool">
-          <p>Tool</p>
-          <ul>
-            <li><img src="./img/Ps.png" alt="포토샵" /></li>
-            <li><img src="./img/Ai.png" alt="일러스트" /></li>
-            <li><img src="./img/Figma.png" alt="피그마" /></li>
-            <li><img src="./img/html_js_css.png" alt="html, js, css" /></li>
-          </ul>
+      <img src="./img/hui.png" alt="프로필사진" class="profile-image" />
+      <div class="about-simple">
+        <div class="about-item">
+          <span class="about-label">이름</span>
+          <span class="about-value">김환희</span>
+        </div>
+
+        <div class="about-item">
+          <span class="about-label">생년월일</span>
+          <span class="about-value">1993.11.09</span>
+        </div>
+
+        <div class="about-item">
+          <span class="about-label">이메일</span>
+          <span class="about-value">eehiuh@email.com</span>
+        </div>
+
+        <div class="about-item">
+          <span class="about-label">교육</span>
+          <span class="about-value">프로젝트 기반 풀스택 부트캠프 수료 (2025.01-09)</span>
+        </div>
+
+        <div class="about-item">
+          <span class="about-label"></span>
+          <span class="about-value">UI/UX 반응형 웹디자인&웹퍼블리셔 양성과정 수료 (2024.05-10)</span>
         </div>
       </div>
     </div>
-    <div class="borderCenter"></div>
+  </div>
+  <!-- Skills 섹션 -->
+  <div id="skillsWrap">
+    <div class="skills-section">
+      <div class="skills-header">
+        <h2>SKILLS</h2>
+      </div>
+
+      <div class="skills-container">
+        <!-- Language -->
+        <div class="skill-category">
+          <div class="category-icon">💻</div>
+          <div class="category-title">Language</div>
+          <div class="skill-badges">
+            <span class="skill-badge java">Java</span>
+            <span class="skill-badge js">JavaScript</span>
+          </div>
+        </div>
+
+        <!-- Frontend -->
+        <div class="skill-category">
+          <div class="category-icon">🎨</div>
+          <div class="category-title">Frontend</div>
+          <div class="skill-badges">
+            <span class="skill-badge html">HTML5</span>
+            <span class="skill-badge css">CSS3</span>
+            <span class="skill-badge react">React</span>
+            <span class="skill-badge jquery">jQuery</span>
+            <span class="skill-badge bootstrap">Bootstrap</span>
+          </div>
+        </div>
+
+        <!-- Backend -->
+        <div class="skill-category">
+          <div class="category-icon">⚙️</div>
+          <div class="category-title">Backend</div>
+          <div class="skill-badges">
+            <span class="skill-badge spring">Spring</span>
+            <span class="skill-badge springboot">Spring Boot</span>
+            <span class="skill-badge mybatis">MyBatis</span>
+            <span class="skill-badge supabase">Supabase</span>
+          </div>
+        </div>
+
+        <!-- Database & DevOps -->
+        <div class="skill-category">
+          <div class="category-icon">🗄️</div>
+          <div class="category-title">Database & DevOps</div>
+          <div class="skill-badges">
+            <span class="skill-badge oracle">Oracle</span>
+            <span class="skill-badge aws">AWS</span>
+            <span class="skill-badge git">Git</span>
+            <span class="skill-badge github">GitHub</span>
+          </div>
+        </div>
+
+        <!-- Design Tools -->
+        <div class="skill-category">
+          <div class="category-icon">🎭</div>
+          <div class="category-title">Design Tools</div>
+          <div class="skill-badges">
+            <span class="skill-badge figma">Figma</span>
+            <span class="skill-badge ps">Photoshop</span>
+            <span class="skill-badge ai">Illustrator</span>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <!--********** Full Stack Slider Section **********-->
@@ -98,10 +156,27 @@
               <dt>Tools:</dt>
               <dd>VSCode, Figma, GitHub</dd>
             </dl>
+            <dl>
+              <dt>주요 구현:</dt>
+              <dd>1. Supabase Auth 소셜 로그인 시스템</dd>
+            </dl>
+            <dl>
+              <dt></dt>
+              <dd>2. Realtime 기반 1:1 퀴즈 매칭 시스템</dd>
+            </dl>
+            <dl>
+              <dt></dt>
+              <dd>3. WebSocket 실시간 채팅 구현</dd>
+            </dl>
+            <dl>
+              <dt></dt>
+              <dd>4. 사용자 학습 데이터 분석 대시보드</dd>
+            </dl>
           </div>
           <ul class="project-buttons">
             <li><a href="https://hyunsuplee.github.io/JavaNyang/" target="_blank" rel="noopener noreferrer">결과보기</a>
-            <li><a href="https://www.youtube.com/watch?v=uUBhM42BH-0" target="_blank" rel="noopener noreferrer">시연영상</a></li>
+            <li><a href="https://www.youtube.com/watch?v=uUBhM42BH-0" target="_blank" rel="noopener noreferrer">시연영상</a>
+            </li>
             <li><a
                 href="https://docs.google.com/presentation/d/1kZLok7ghs3k1yS8DlzHbeXU9XlowPUsiCXJ1jTjBqGU/edit?usp=sharing"
                 target="_blank" rel="noopener noreferrer">발표자료</a></li>
@@ -130,20 +205,29 @@
               <dd>React, React Router, Vite</dd>
             </dl>
             <dl>
-              <dt>Backend:</dt>
-              <dd>Spring Boot, Java, MyBatis, Lombok</dd>
-            </dl>
-            <dl>
-              <dt>Database:</dt>
-              <dd>Oracle 11g</dd>
-            </dl>
-            <dl>
-              <dt>DevOps:</dt>
-              <dd>AWS EC2, AWS S3</dd>
+              <dt>Backend: <br />
+                & Infra</dt>
+              <dd>Spring Boot, Java, MyBatis, Lombok, <br />Oracle 11g, AWS EC2, AWS S3</dd>
             </dl>
             <dl>
               <dt>Tools:</dt>
               <dd>IntelliJ IDEA, VS Code, SQL Developer, GitHub</dd>
+            </dl>
+            <dl>
+              <dt>주요 구현:</dt>
+              <dd>1. 권한 기반 스터디 그룹 관리 시스템</dd>
+            </dl>
+            <dl>
+              <dt></dt>
+              <dd>2. 스터디 대시보드 메인화면 개발</dd>
+            </dl>
+            <dl>
+              <dt></dt>
+              <dd>3. 주간/월별 캘린더 연동 시스템</dd>
+            </dl>
+            <dl>
+              <dt></dt>
+              <dd>4. 역할별 CRUD 권한 차등 적용</dd>
             </dl>
           </div>
           <ul class="project-buttons">
@@ -189,8 +273,11 @@
 
           </div>
           <ul class="project-buttons">
-            <li><a href="https://mmall-dev-project.github.io/M-MALL/" target="_blank" rel="noopener noreferrer">결과보기</a></li>
-            <li><a href="https://www.figma.com/proto/UG7itBeM6mzU3uAY8uKA7W/%ED%8F%AC%ED%8F%B4-%EA%B8%B0%ED%9A%8D%EC%84%9C--%EB%B0%9C%ED%91%9C-%EB%8C%80%EB%B3%B8?node-id=1-44&t=1QX3At6wkCADjdZJ-1&scaling=contain&content-scaling=fixed&page-id=0%3A1" target="_blank" rel="noopener noreferrer">기획 의도</a></li>
+            <li><a href="https://mmall-dev-project.github.io/M-MALL/" target="_blank" rel="noopener noreferrer">결과보기</a>
+            </li>
+            <li><a
+                href="https://www.figma.com/proto/UG7itBeM6mzU3uAY8uKA7W/%ED%8F%AC%ED%8F%B4-%EA%B8%B0%ED%9A%8D%EC%84%9C--%EB%B0%9C%ED%91%9C-%EB%8C%80%EB%B3%B8?node-id=1-44&t=1QX3At6wkCADjdZJ-1&scaling=contain&content-scaling=fixed&page-id=0%3A1"
+                target="_blank" rel="noopener noreferrer">기획 의도</a></li>
             <li><a href="https://github.com/MMALL-Dev-Project/M-MALL.git" target="_blank"
                 rel="noopener noreferrer">GitHub</a></li>
           </ul>
@@ -244,13 +331,13 @@
             </dl>
           </div>
           <ul class="project-buttons">
+            <li><a href="https://rlaksl.github.io/M-MALL_project/" target="_blank" rel="noopener noreferrer">결과보기</a>
             <li><a
                 href="https://www.figma.com/design/UG7itBeM6mzU3uAY8uKA7W/%ED%8F%AC%ED%8F%B4-%EA%B8%B0%ED%9A%8D%EC%84%9C--%EB%B0%9C%ED%91%9C-%EB%8C%80%EB%B3%B8?t=3vyVHCn2NuER3U7c-1"
                 target="_blank" rel="noopener noreferrer">기획서</a></li>
             <li><a
                 href="https://www.figma.com/design/J8MEetycnmffPsvOeYrTUD/M%ED%8F%AC%EC%9D%B8%ED%8A%B8-%EB%AA%B0?node-id=0-1&t=3vyVHCn2NuER3U7c-1"
                 target="_blank" rel="noopener noreferrer">와이어프레임</a></li>
-            <li><a href="https://rlaksl.github.io/M-MALL_project/" target="_blank" rel="noopener noreferrer">결과보기</a>
             </li>
           </ul>
         </div>
@@ -281,11 +368,11 @@
             </dl>
           </div>
           <ul class="project-buttons">
+            <li><a href="https://rlaksl.github.io/madecaPrime_project/" target="_blank"
+                rel="noopener noreferrer">결과보기</a></li>
             <li><a
                 href="https://www.figma.com/design/NGLuNNG5fznjYer3P0tVl0/%EB%A7%88%EB%8D%B0%EC%B9%B4%ED%94%84%EB%9D%BC%EC%9E%84?node-id=231-2&t=AMjy889Fd5ubH1y0-0"
                 target="_blank" rel="noopener noreferrer">와이어프레임</a></li>
-            <li><a href="https://rlaksl.github.io/madecaPrime_project/" target="_blank"
-                rel="noopener noreferrer">결과보기</a></li>
           </ul>
         </div>
         <div class="project-right">
@@ -316,9 +403,9 @@
             </dl>
           </div>
           <ul class="project-buttons">
+            <li><a href="https://rlaksl.github.io/hdex_project/" target="_blank" rel="noopener noreferrer">결과보기</a></li>
             <li><a href="https://www.figma.com/design/s23xnVymbk6RuhwSxn3K5R/HDEX?t=rc9jB4yMd7g1PMZH-1" target="_blank"
                 rel="noopener noreferrer">와이어프레임</a></li>
-            <li><a href="https://rlaksl.github.io/hdex_project/" target="_blank" rel="noopener noreferrer">결과보기</a></li>
           </ul>
         </div>
         <div class="project-right">

@@ -28,7 +28,7 @@ $(document).ready(function () {
         const targetTop = $targetElement.offset().top;
         $('html, body').animate({ scrollTop: targetTop }, 500);
 
-        const sections = ['#profileWrap', '#fullStackWrap', '#webDesignWrap'];
+        const sections = ['#aboutWrap', '#skillsWrap', '#fullStackWrap', '#webDesignWrap'];
         const idx = sections.indexOf(target);
         if (idx !== -1) {
           $('nav ul li').removeClass('on');
@@ -41,7 +41,7 @@ $(document).ready(function () {
   // ================== 섹션별 마우스 휠 네비게이션
   function initWheelNavigation() {
     let isScrolling = false;
-    const sections = ['profileWrap', 'fullStackWrap', 'webDesignWrap'];
+    const sections = ['aboutWrap', 'skillsWrap', 'fullStackWrap', 'webDesignWrap'];
     let currentSectionIndex = 0;
 
     function getCurrentSection() {

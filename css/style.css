@@ -40,113 +40,203 @@ ul li.on::after {
   top: -12px;
 }
 
-/* ===================================ProfileWrap 시작 */
-#profileWrap {
-  height: 100vh;
-  padding: 0 111px;
+/* ===================================About Me 섹션 */
+#aboutWrap {
+
+  padding: 111px 111px 30px 111px;
   background-color: #F7FFF7;
   color: #6C6A5D;
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 
-#profileWrap > p {
-  font-size: 2rem;
-  padding-top: 111px;
-  margin-bottom: 60px;
+.profile-image {
+  display: block;
+  width: 400px;
+  object-fit: cover;
+  margin: 0 auto 40px auto;
 }
 
-#profileWrap .profile {
+.about-section {
+  margin-bottom: 10px;
+}
+
+.about-header {
+  text-align: center;
+  margin-bottom:20px;
+}
+
+.about-header h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #6C6A5D;
+  margin: 0;
+}
+
+.about-simple {
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+.about-item {
   display: flex;
-  flex: 1;
-  align-items: center;
+  margin-bottom: 15px;
+  align-items: flex-start;
 }
 
-#profileWrap .pro_left {
-  border-right: 1px solid #6C6A5D;
-}
-
-#profileWrap .pro_left img {
-  margin-bottom: 60px;
-  margin-right: clamp(50px, 12vw, 158px);
-  width: clamp(150px, 20vw, 100%);
-  height: auto;
-}
-
-#profileWrap .pro_left .name {
-  margin-bottom: 26px;
-  font-size: clamp(1rem, 1.5vw, 1.25rem);
+.about-label {
+  font-size: 1.1rem;
   font-weight: 600;
   color: #6C6A5D;
+  min-width: 100px;
+  margin-right: 30px;
 }
 
-#profileWrap .pro_left dl {
-  display: flex;
-  margin-bottom: 10px;
-  font-size: clamp(0.9rem, 1.2vw, 1.06rem);
-}
-
-#profileWrap .pro_left dl dt {
-  font-weight: 600;
-  margin-right: 26px;
-}
-
-#profileWrap .pro_left dl dd {
+.about-value {
+  font-size: 1.1rem;
   font-weight: 500;
-  margin-bottom: 8px;
-}
-
-#profileWrap .pro_left .Birth dt {
-  margin-right: 37px;
-}
-
-#profileWrap .pro_left .sns dt {
-  margin-right: 44px;
-}
-
-#profileWrap .pro_right {
-  margin-left: clamp(50px, 12vw, 158px);
+  color: #6C6A5D;
+  line-height: 1.5;
   flex: 1;
 }
 
-#profileWrap .pro_right dl {
-  margin-bottom: 50px;
-  font-size: clamp(0.9rem, 1.2vw, 1.06rem);
+/* ===================================Skills 섹션 */
+#skillsWrap {
+  padding: 120px 111px;
+  background-color: #F0F8FF;
+  color: #6C6A5D;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-#profileWrap .pro_right dl dt {
-  margin-bottom: 26px;
-  font-size: clamp(1rem, 1.5vw, 1.25rem);
+.skills-section {
+  margin-bottom: 0px;
+}
+
+.skills-header {
+  text-align: center;
+}
+
+.skills-header h2 {
+  font-size: 2.5rem;
   font-weight: bold;
+  color: #6C6A5D;
+  margin: 0;
 }
 
-#profileWrap .pro_right dl dd {
-  margin-bottom: 20px;
-  font-size: clamp(0.9rem, 1.2vw, 1.06rem);
+.skills-container {
+  padding-top: 40px;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
-#profileWrap .pro_right dl dd span {
-  padding-right: 15px;
-  font-weight: 600;
-}
-
-#profileWrap .pro_right dl .experUni {
-  padding-right: 70px;
-}
-
-#profileWrap .pro_right .tool p {
-  margin-bottom: 26px;
-  font-size: clamp(1rem, 1.5vw, 1.25rem);
-  font-weight: bold;
-}
-
-#profileWrap .pro_right .tool ul {
+.skill-category {
   display: flex;
   align-items: center;
+  margin-bottom: 30px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid rgba(108, 106, 93, 0.1);
 }
 
-#profileWrap .pro_right .tool ul li {
-  margin-right: 12px;
+.skill-category:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.category-icon {
+  font-size: 1.5rem;
+  min-width: 50px;
+  text-align: center;
+}
+
+.category-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #6C6A5D;
+  min-width: 150px;
+  margin-right: 30px;
+}
+
+.skill-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  flex: 1;
+}
+
+.skill-badge {
+  display: inline-block;
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  color: white;
+  text-align: center;
+  min-width: 70px;
+}
+
+/* 기술별 색상 */
+.skill-badge.java { background-color: #007396; }
+.skill-badge.js { background-color: #F7DF1E; color: black; }
+
+.skill-badge.html { background-color: #E34F26; }
+.skill-badge.css { background-color: #1572B6; }
+.skill-badge.react { background-color: #61DAFB; color: black; }
+.skill-badge.jquery { background-color: #0769AD; }
+.skill-badge.bootstrap { background-color: #7952B3; }
+
+.skill-badge.spring { background-color: #6DB33F; }
+.skill-badge.springboot { background-color: #6DB33F; }
+.skill-badge.mybatis { background-color: #B52E31; }
+.skill-badge.supabase { background-color: #3ECF8E; }
+
+.skill-badge.oracle { background-color: #F80000; }
+.skill-badge.aws { background-color: #232F3E; }
+.skill-badge.git { background-color: #F05032; }
+.skill-badge.github { background-color: #181717; }
+
+.skill-badge.figma { background-color: #F24E1E; }
+.skill-badge.ps { background-color: #31A8FF; }
+.skill-badge.ai { background-color: #FF9A00; }
+
+.borderCenter {
+  border-bottom: 1px solid #6C6A5D;
+  margin-top: auto;
+}
+
+/* 반응형 */
+@media (max-width: 1024px) {
+  .skill-category {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  
+  .category-title {
+    min-width: auto;
+    margin-right: 0;
+  }
+  
+  #aboutWrap, #skillsWrap {
+    padding: 0 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  .skills-container {
+    padding: 25px;
+  }
+  
+  .about-item {
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .about-label {
+    min-width: auto;
+    margin-right: 0;
+  }
 }
 
 /* ===================================슬라이더 공통 스타일 */
@@ -168,7 +258,7 @@ ul li.on::after {
   height: 100vh;
   display: flex;
   align-items: center;
-  padding: 0 clamp(20px, 10vw, 180px); /* 반응형 패딩으로 수정 */
+  padding: 0 clamp(20px, 10vw, 180px);
   opacity: 0;
   transform: translateX(50px);
   transition: all 0.4s ease-in-out;
@@ -252,7 +342,7 @@ ul li.on::after {
   display: flex;
   gap: 15px;
   position: relative;
-  z-index: 300; /* 정리된 z-index */
+  z-index: 300;
 }
 
 .project-buttons li a {
@@ -265,7 +355,7 @@ ul li.on::after {
   border: 1px solid #868686;
   transition: all 0.3s;
   position: relative;
-  z-index: 301; /* !important 제거하고 깔끔하게 정리 */
+  z-index: 301;
 }
 
 .project-buttons li:hover a {
@@ -297,7 +387,7 @@ ul li.on::after {
   width: 80px;
   height: 80px;
   transition: all 0.2s ease;
-  z-index: 200; /* 정리된 z-index */
+  z-index: 200;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -335,7 +425,7 @@ ul li.on::after {
   transform: translateX(-50%);
   display: flex;
   gap: 12px;
-  z-index: 200; /* 정리된 z-index */
+  z-index: 200;
 }
 
 .indicator {
