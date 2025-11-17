@@ -180,18 +180,22 @@ ul li.on::after {
 .skill-badge.java { background-color: #007396; }
 .skill-badge.js { background-color: #F7DF1E; color: black; }
 
+.skill-badge.spring { background-color: #6DB33F; }
+.skill-badge.springboot { background-color: #6DB33F; }
+.skill-badge.mybatis { background-color: #B52E31; }
+.skill-badge.jsp { background-color: #007396; }
+.skill-badge.jdbc { background-color: #007396; }
+.skill-badge.supabase { background-color: #3ECF8E; }
+
 .skill-badge.html { background-color: #E34F26; }
 .skill-badge.css { background-color: #1572B6; }
 .skill-badge.react { background-color: #61DAFB; color: black; }
 .skill-badge.jquery { background-color: #0769AD; }
 .skill-badge.bootstrap { background-color: #7952B3; }
 
-.skill-badge.spring { background-color: #6DB33F; }
-.skill-badge.springboot { background-color: #6DB33F; }
-.skill-badge.mybatis { background-color: #B52E31; }
-.skill-badge.supabase { background-color: #3ECF8E; }
-
+.skill-badge.sql { background-color: #336791; }
 .skill-badge.oracle { background-color: #F80000; }
+.skill-badge.postgresql { background-color: #4169E1; }
 .skill-badge.aws { background-color: #232F3E; }
 .skill-badge.git { background-color: #F05032; }
 .skill-badge.github { background-color: #181717; }
@@ -199,6 +203,8 @@ ul li.on::after {
 .skill-badge.figma { background-color: #F24E1E; }
 .skill-badge.ps { background-color: #31A8FF; }
 .skill-badge.ai { background-color: #FF9A00; }
+
+.skill-badge.jira { background-color: #0052CC; }
 
 .borderCenter {
   border-bottom: 1px solid #6C6A5D;
