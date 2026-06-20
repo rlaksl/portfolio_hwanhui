@@ -179,13 +179,14 @@ ul li.on::after {
 /* 기술별 색상 */
 .skill-badge.java { background-color: #007396; }
 .skill-badge.js { background-color: #F7DF1E; color: black; }
+.skill-badge.ts { background-color: #3178C6; }
 
 .skill-badge.spring { background-color: #6DB33F; }
 .skill-badge.springboot { background-color: #6DB33F; }
+.skill-badge.jpa { background-color: #6DB33F; }
 .skill-badge.mybatis { background-color: #B52E31; }
 .skill-badge.jsp { background-color: #007396; }
 .skill-badge.jdbc { background-color: #007396; }
-.skill-badge.supabase { background-color: #3ECF8E; }
 
 .skill-badge.html { background-color: #E34F26; }
 .skill-badge.css { background-color: #1572B6; }
@@ -196,7 +197,10 @@ ul li.on::after {
 .skill-badge.sql { background-color: #336791; }
 .skill-badge.oracle { background-color: #F80000; }
 .skill-badge.postgresql { background-color: #4169E1; }
+.skill-badge.mysql { background-color: #4479A1; }
+.skill-badge.redis { background-color: #DC382D; }
 .skill-badge.aws { background-color: #232F3E; }
+.skill-badge.supabase { background-color: #3ECF8E; }
 .skill-badge.git { background-color: #F05032; }
 .skill-badge.github { background-color: #181717; }
 
@@ -284,6 +288,9 @@ ul li.on::after {
 #fullStackWrap .slide:nth-child(1) { background: #F8F5FF; }
 #fullStackWrap .slide:nth-child(2) { background: #FFF7ED; }
 #fullStackWrap .slide:nth-child(3) { background: #E6F1FB; }
+
+#backendWrap .slide:nth-child(1) { background: #E8F5E9; }
+#backendWrap .slide:nth-child(2) { background: #FFF8E1; }
 
 #webDesignWrap .slide:nth-child(1) { background: #E6F1FB; }
 #webDesignWrap .slide:nth-child(2) { background: #F4ECF6; }

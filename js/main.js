@@ -1,6 +1,6 @@
 $(document).ready(function () {
   // ================== 슬라이더 상태 동적 계산
-  const sliderKeys = ['#fullStackWrap', '#webDesignWrap'];
+  const sliderKeys = ['#fullStackWrap', '#backendWrap', '#webDesignWrap'];
   const sliders = {};
   sliderKeys.forEach((id) => {
     const $c = $(id);
@@ -28,7 +28,7 @@ $(document).ready(function () {
         const targetTop = $targetElement.offset().top;
         $('html, body').animate({ scrollTop: targetTop }, 500);
 
-        const sections = ['#aboutWrap', '#skillsWrap', '#fullStackWrap', '#webDesignWrap'];
+        const sections = ['#aboutWrap', '#skillsWrap', '#fullStackWrap', '#backendWrap', '#webDesignWrap'];
         const idx = sections.indexOf(target);
         if (idx !== -1) {
           $('nav ul li').removeClass('on');
@@ -41,7 +41,7 @@ $(document).ready(function () {
   // ================== 섹션별 마우스 휠 네비게이션
   function initWheelNavigation() {
     let isScrolling = false;
-    const sections = ['aboutWrap', 'skillsWrap', 'fullStackWrap', 'webDesignWrap'];
+    const sections = ['aboutWrap', 'skillsWrap', 'fullStackWrap', 'backendWrap', 'webDesignWrap'];
     let currentSectionIndex = 0;
 
     function getCurrentSection() {
@@ -146,7 +146,7 @@ $(document).ready(function () {
       const scrollPosition = $(window).scrollTop() + $(window).height() / 2;
       let currentSliderKey = null;
 
-      $('#fullStackWrap, #webDesignWrap').each(function () {
+      $('#fullStackWrap, #backendWrap, #webDesignWrap').each(function () {
         const sectionTop = $(this).offset().top;
         const sectionBottom = sectionTop + $(this).outerHeight();
         if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
